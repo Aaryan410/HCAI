@@ -1,0 +1,299 @@
+{
+    "Meituan": [
+        {
+            "name": "LongCat 2.0",
+            "id": "meituan/longcat-2.0"
+        }
+    ],
+
+
+    "Thinking Machines": [
+        {
+            "name": "Inkling",
+            "id": "thinkingmachines/inkling"
+        }
+    ],
+
+
+    "Openrouter": [
+        {
+            "name": "Auto Router (Beta)",
+            "id": "openrouter/auto-beta"
+        },
+
+        {
+            "name": "Fusion",
+            "id": "openrouter/fusion"
+        }
+    ],
+
+
+    "MoonshotAI": [
+        {
+            "name": "Kimi K3",
+            "id": "moonshotai/kimi-k3"
+        },
+
+        {
+            "name": "Kimi K2.7 Code",
+            "id": "moonshotai/kimi-k2.7-code"
+        }
+    ],
+
+
+    "Meta": [
+        {
+            "name": "Muse Spark 1.1",
+            "id": "meta/muse-spark-1.1"
+        }
+    ],
+
+
+    "Kwaipilot": [
+        {
+            "name": "KAT-Coder-Air V2.5",
+            "id": "kwaipilot/kat-coder-air-v2.5"
+        },
+
+        {
+            "name": "KAT-Coder-Pro V2.5",
+            "id": "kwaipilot/kat-coder-pro-v2.5"
+        }
+    ],
+
+
+    "OpenAI": [
+        {
+            "name": "GPT-5.6 Luna Pro",
+            "id": "openai/gpt-5.6-luna-pro"
+        },
+
+        {
+            "name": "GPT-5.6 Luna",
+            "id": "openai/gpt-5.6-luna"
+        },
+
+        {
+            "name": "GPT-5.6 Terra Pro",
+            "id": "openai/gpt-5.6-terra-pro"
+        },
+
+        {
+            "name": "GPT-5.6 Terra",
+            "id": "openai/gpt-5.6-terra"
+        },
+
+        {
+            "name": "GPT-5.6 Sol Pro",
+            "id": "openai/gpt-5.6-sol-pro"
+        },
+
+        {
+            "name": "GPT-5.6 Sol",
+            "id": "openai/gpt-5.6-sol"
+        }
+    ],
+
+
+    "xAI": [
+        {
+            "name": "Grok 4.5",
+            "id": "x-ai/grok-4.5"
+        },
+
+        {
+            "name": "Grok Build 0.1",
+            "id": "x-ai/grok-build-0.1"
+        }
+    ],
+
+
+    "AionLabs": [
+        {
+            "name": "Aion-3.0-Mini",
+            "id": "aion-labs/aion-3.0-mini"   
+        },
+
+        {
+            "name": "Aion-3.0",
+            "id": "aion-labs/aion-3.0"
+        }
+    ],
+
+
+    "Tencent": [
+        {
+            "name": "Hy3",
+            "id": "tencent/hy3"
+        }
+    ],
+
+
+    "Poolside": [
+        {
+            "name": "Laguna XS 2.1",
+            "id": "poolside/laguna-xs-2.1"
+        },
+
+        {
+            "name": "Laguna XS 2.1 (free)",
+            "id": "poolside/laguna-xs-2.1:free"
+        }
+    ],
+
+
+    "Anthropic": [
+        {
+            "name": "Claude Opus 4.8",
+            "id": "anthropic/claude-opus-4.8"
+        },
+
+        {
+            "name": "Claude Fable 5",
+            "id": "anthropic/claude-fable-5"
+        },
+
+        {
+            "name": "Claude Sonnet 5",
+            "id": "anthropic/claude-sonnet-5"
+        },
+
+        {
+            "name": "Claude Opus 4.8 (Fast)",
+            "id": "anthropic/claude-opus-4.8-fast"
+        },
+
+        {
+            "name": "Claude Opus 4.7 (Fast)",
+            "id": "anthropic/claude-opus-4.7-fast"
+        }
+    ],
+
+
+    "Google": [
+        {
+            "name": "Nano Banana 2 Lite",
+            "id": "google/gemini-3.1-flash-lite-image"
+        },
+
+        {
+            "name": "Nano Banana 2",
+            "id": "google/gemini-3.1-flash-image"
+        },
+
+        {
+            "name": "Nano Banana Pro",
+            "id": "google/gemini-3-pro-image"
+        },
+
+        {
+            "name": "Gemini 3.5 Flash",
+            "id": "google/gemini-3.5-flash"
+        },
+
+        {
+            "name": "Gemini 3.1 Flash Lite",
+            "id": "google/gemini-3.1-flash-lite"
+        }
+    ],
+
+
+    "Nex AGI": [
+        {
+            "name": "Nex-N2-Mini",
+            "id": "nex-agi/nex-n2-mini"
+        },
+
+        {
+            "name": "Nex-N2-Pro",
+            "id": "nex-agi/nex-n2-pro"
+        }
+    ],
+
+
+    "Sakana": [
+        {
+            "name": "Fugu Ultra",
+            "id": "sakana/fugu-ultra"
+        }
+    ],
+
+
+    "Cohere": [
+        {
+            "name": "North Mini Code (free)",
+            "id": "cohere/north-mini-code:free"
+        }
+    ],
+
+
+    "Z.ai": [
+        {
+            "name": "GLM 5.2",
+            "id": "z-ai/glm-5.2"
+        }
+    ],
+
+
+    "NVIDIA": [
+        {
+            "name": "Nemotron 3.5 Content Safety (free)",
+            "id": "nvidia/nemotron-3.5-content-safety:free"
+        },
+
+        {
+            "name": "Nemotron 3 Ultra",
+            "id": "nvidia/nemotron-3-ultra-550b-a55b"
+        },
+
+        {
+            "name": "Nemotron 3 Ultra (free)",
+            "id": "nvidia/nemotron-3-ultra-550b-a55b:free"
+        }
+    ],
+
+
+    "Qwen": [
+        {
+            "name": "Qwen3.7 Plus",
+            "id": "qwen/qwen3.7-plus"
+        },
+
+        {
+            "name": "Qwen3.7 Max",
+            "id": "qwen/qwen3.7-max"
+        }
+    ],
+
+
+    "Minimax": [
+        {
+            "name": "MiniMax M3",
+            "id": "minimax/minimax-m3"
+        }
+    ],
+
+
+    "StepFun": [
+        {
+            "name": "Step 3.7 Flash",
+            "id": "stepfun/step-3.7-flash"
+        }
+    ],
+
+
+    "Perceptron": [
+        {
+            "name": "Perceptron Mk1",
+            "id": "perceptron/perceptron-mk1"
+        }
+    ],
+
+
+    "InclusionAI": [
+        {
+            "name": "Ring-2.6-1T",
+            "id": "inclusionai/ring-2.6-1t"
+        }
+    ]
+}
