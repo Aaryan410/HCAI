@@ -1,5 +1,6 @@
 import requests
-from config import load_config
+import json
+from hcai.config import load_config
 
 
 API_URL = "https://ai.hackclub.com/proxy/v1/chat/completions"
@@ -31,19 +32,21 @@ def create_payload(model: str, messages: list[dict], stream: bool = True) -> dic
     return payload
 
 
-def send_message(messages: list[dict]) -> requests.Response | None:
+def send_message(messages: list[dict[str, str]]) -> requests.Response | None:
     config = load_config()
 
     if not config:
         print("❌ Failed to load configuration.")
         return None
 
-    api_key = config["api_key"]
-    model = config["model"]
+    api_key = config.get("api_key")
+    model = config.get("model")
 
     headers = create_headers(api_key)
 
     payload = create_payload(model, messages)
+
+    TIMEOUT = 60
 
     try:
         response = requests.post(
@@ -51,13 +54,13 @@ def send_message(messages: list[dict]) -> requests.Response | None:
             headers = headers,
             json = payload,
             stream = True,
-            timeout = 60
+            timeout = TIMEOUT
         )
 
         response.raise_for_status()
 
         return response
-    except requests.RequestException:
+    except requests.RequestException as e:
         print(f"❌ Request failed:\n{e}")
         return None
 
@@ -74,12 +77,31 @@ def stream_response(response: requests.Response) -> str:
         if not line:
             continue
 
-        # TODO: Parse streamed chunks once API format is confirmed
+        line = line.decode("utf-8")
 
-    history.append({
-        "role: "assistant",
-        "content": full_response
-    })
+        if not line.startswith("data: "):
+            continue
+        
+        if line == "data: [DONE]":
+            break
+
+        try:
+            data = json.loads(line[6:])
+
+            choice = data["choices"][0]
+
+            delta = choice.get("delta") or {}
+
+            content = delta.get("content", "")
+
+            if content:
+                print(content, end = "", flush = True)
+                full_response += content
+
+        except (json.JSONDecodeError, KeyError, IndexError):
+            continue
+
+    print()
 
     return full_response
 

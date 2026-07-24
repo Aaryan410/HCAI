@@ -1,16 +1,10 @@
-# Virtual Environment
-.venv/
-
-# Environment Variables
-.env
-
-# Python Cache
 __pycache__/
 *.py[cod]
+*.egg-info/
+build/
+dist/
+.venv/
+.env
 
-# VS Code
-.vscode/
-
-# OS Files
-.DS_Store
-Thumbs.db
+# HCAI Config
+.hcai/

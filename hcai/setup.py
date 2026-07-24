@@ -1,5 +1,5 @@
-from config import save_config, validate_api_key
-from models import get_providers, get_models
+from hcai.config import save_config, validate_api_key
+from hcai.models import get_providers, get_models
 
 
 def main():
@@ -41,7 +41,7 @@ def run_setup():
 
     while True:
         try:
-            provider_selected = int(input("Provider number > ").strip())
+            provider_selected = int(input("\nProvider number > ").strip())
         except ValueError:
             print("Please enter a number.")
             continue
@@ -65,7 +65,7 @@ def run_setup():
 
     while True:
         try:
-            model_selected = int(input("Model number > ").strip())
+            model_selected = int(input("\nModel number > ").strip())
         except ValueError:
             print("Please enter a number.")
             continue

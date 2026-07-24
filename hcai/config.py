@@ -1,7 +1,7 @@
 from pathlib import Path
 import json
 
-from models import provider_exists, model_id_exists
+from hcai.models import provider_exists, model_id_exists
 
 
 CONFIG_PATH = Path.home() / ".hcai" / "config.json"

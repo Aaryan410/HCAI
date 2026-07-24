@@ -1,6 +1,5 @@
-import json
 from pathlib import Path
-from models import load_models
+from hcai.models import load_models
     
 
 def validate_structure(data: dict) -> tuple[bool, list[str]]:
