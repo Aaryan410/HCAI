@@ -7,6 +7,16 @@ from hcai.models import get_model_name
 
 def main():
     if not config_exists():
+
+        print()
+        print("=" * 50)
+        print("Welcome to HCAI!")
+        print("=" * 50)
+        print()
+        print("It looks like this is your first time running HCAI.")
+        print("Let's get you set up.")
+        print()
+        
         run_setup()
 
     config = load_config()

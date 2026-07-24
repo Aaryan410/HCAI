@@ -51,18 +51,65 @@ def send_message(messages: list[dict[str, str]]) -> requests.Response | None:
     try:
         response = requests.post(
             API_URL,
-            headers = headers,
-            json = payload,
-            stream = True,
-            timeout = TIMEOUT
+            headers=headers,
+            json=payload,
+            stream=True,
+            timeout=TIMEOUT
         )
 
         response.raise_for_status()
-
         return response
-    except requests.RequestException as e:
-        print(f"❌ Request failed:\n{e}")
-        return None
+
+    except requests.exceptions.HTTPError as e:
+        status = e.response.status_code if e.response else None
+
+        if status == 401:
+            print("\n❌ Invalid API key.")
+            print("Please check your API key and try again.\n")
+
+        elif status == 403:
+            print("\n❌ Access denied.")
+            print("Your API key doesn't have permission to access this resource.\n")
+
+        elif status == 404:
+            print("\n❌ Model or endpoint not found.\n")
+
+        elif status == 429:
+            print("\n❌ Rate limit exceeded.")
+            print("Please wait a moment and try again.\n")
+
+        elif status == 500:
+            print("\n❌ Internal server error.")
+            print("Please try again later.\n")
+
+        elif status == 502:
+            print("\n❌ Bad gateway.")
+            print("The AI provider is temporarily unavailable.\n")
+
+        elif status == 503:
+            print("\n❌ Service unavailable.")
+            print("Please try again later.\n")
+
+        elif status == 504:
+            print("\n❌ The AI server took too long to respond.")
+            print("This is usually temporary.")
+            print("Try sending the message again or switch to another model with /use.\n")
+
+        else:
+            print(f"\n❌ HTTP Error {status}: {e}\n")
+
+    except requests.exceptions.Timeout:
+        print("\n❌ The request timed out.")
+        print("Please try again.\n")
+
+    except requests.exceptions.ConnectionError:
+        print("\n❌ Unable to connect to the AI server.")
+        print("Please check your internet connection.\n")
+
+    except requests.exceptions.RequestException as e:
+        print(f"\n❌ Request failed:\n{e}")
+
+    return None
 
 
 def stream_response(response: requests.Response) -> str:
