@@ -134,3 +134,7 @@ HCAI/
 ## License
 
 MIT License
+
+
+## Credit:
+- I used ChatGPT for guidance to make it, for fixing bugs and errors like for example how would I publish it on PyPI, if i get an Error how to handle it and make it more user friendly etc. I wrote the most of the code myself.
