@@ -24,7 +24,7 @@ HCAI allows you to chat with multiple AI models directly from your terminal with
 Clone the repository
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/HCAI.git
+git clone https://github.com/Aaryan410/HCAI.git
 ```
 
 Move into the project
