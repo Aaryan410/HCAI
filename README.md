@@ -4,8 +4,6 @@ A lightweight AI command-line interface powered by Hack Club AI.
 
 HCAI allows you to chat with multiple AI models directly from your terminal with streaming responses, persistent conversation history, and seamless model switching.
 
----
-
 ## Features
 
 - 🚀 Real-time streaming responses
@@ -16,8 +14,6 @@ HCAI allows you to chat with multiple AI models directly from your terminal with
 - 📁 Configuration stored automatically
 - 🧹 Clear conversation history
 - 💻 Lightweight terminal interface
-
----
 
 ## Installation
 
@@ -39,8 +35,6 @@ Install
 py -m pip install -e .
 ```
 
----
-
 ## First Launch
 
 Simply run
@@ -57,8 +51,6 @@ On the first launch HCAI will ask for
 
 The configuration is automatically saved.
 
----
-
 ## Usage
 
 Start HCAI
@@ -74,8 +66,6 @@ Example
 
 Recursion is a programming technique...
 ```
-
----
 
 ## Commands
 
@@ -96,8 +86,6 @@ Examples
 /use gpt
 /use opus
 ```
-
----
 
 ## Project Structure
 
@@ -120,16 +108,12 @@ HCAI/
 └── requirements.txt
 ```
 
----
-
 ## Tech Stack
 
 - Python
 - Requests
 - JSON
 - Hack Club AI API
-
----
 
 ## License
 
