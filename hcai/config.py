@@ -85,7 +85,7 @@ def validate_config(config: dict) -> bool:
     required_keys = {
         "api_key",
         "provider",
-        "mdoel"
+        "model"
     }
 
     if not required_keys.issubset(config):

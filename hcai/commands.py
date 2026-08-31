@@ -28,24 +28,6 @@ def handle_command(prompt, config, history):
     return False
 
 
-def cmd_help():
-
-    print()
-
-    print("Available Commands")
-    print("------------------")
-    print("/help")
-    print("/use")
-    print("/models")
-    print("/config")
-    print("/history")
-    print("/clear")
-    print("/exit")
-    print()
-
-    return True
-
-
 def cmd_exit():
 
     print("\n👋 Goodbye!")

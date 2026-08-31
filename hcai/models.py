@@ -1,5 +1,6 @@
 import json
 from pathlib import Path
+import requests
 
 BASE_DIR = Path(__file__).parent
 MODELS_FILE = BASE_DIR / "data" / "models.json"
@@ -150,3 +151,31 @@ def find_model(query: str) -> list[dict[str, str]]:
                 )
 
     return matches
+
+
+def sync_models():
+    """
+    Fetch the latest models from Hack Club AI 
+    and update the local model registry.
+    """
+
+    response = requests.get(
+        "https://ai.hackclub.com/proxy/v1/models",
+        timeout = 10
+    )
+
+    response.raise_for_status()
+
+    data = response.json()
+
+    model = data["data"][0]
+
+    name = model["name"]
+    id = model["id"]
+    context_length = model["context_length"]
+    input_modalities = model["architecture"]["input_modalities"]
+    output_modalities = model["architecture"]["output_modalities"]
+    reasoning = model["reasoning"]
+    pricing = model["pricing"]
+
+sync_models()
