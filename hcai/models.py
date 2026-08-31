@@ -171,11 +171,21 @@ def sync_models():
     model = data["data"][0]
 
     name = model["name"]
-    id = model["id"]
+    model_id = model["id"]
     context_length = model["context_length"]
     input_modalities = model["architecture"]["input_modalities"]
     output_modalities = model["architecture"]["output_modalities"]
     reasoning = model["reasoning"]
     pricing = model["pricing"]
+
+    model_data = {
+        "name": name,
+        "id": model_id,
+        "context_length": context_length,
+        "input_modalities": input_modalities,
+        "output_modalities": output_modalities,
+        "reasoning": reasoning,
+        "pricing": pricing
+    }
 
 sync_models()
