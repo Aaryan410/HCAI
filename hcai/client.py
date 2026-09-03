@@ -6,9 +6,6 @@ from hcai.config import load_config
 API_URL = "https://ai.hackclub.com/proxy/v1/chat/completions"
 
 def create_headers(api_key: str) -> dict[str, str]:
-    """
-    Create the HTTP headers for a HACk CLUB AI request.
-    """
 
     return {
         "Authorization": f"Bearer {api_key}",
@@ -17,9 +14,6 @@ def create_headers(api_key: str) -> dict[str, str]:
 
 
 def create_payload(model: str, messages: list[dict], stream: bool = True) -> dict:
-    """
-    Create the JSON payload for a HACK CLUB AI request.
-    """
 
     payload = {
         "model": model,
@@ -113,9 +107,6 @@ def send_message(messages: list[dict[str, str]]) -> requests.Response | None:
 
 
 def stream_response(response: requests.Response) -> str:
-    """
-    Stream the AI response and return the complete text.
-    """
 
     full_response = ""
 
@@ -154,9 +145,6 @@ def stream_response(response: requests.Response) -> str:
 
 
 def chat(prompt: str, messages: list[dict]) -> str | None:
-    """
-    Send a prompt to the AI and update the conversation history.
-    """    
 
     messages.append(
         {

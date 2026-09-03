@@ -3,7 +3,6 @@ from hcai.models import load_models
     
 
 def validate_structure(data: dict) -> tuple[bool, list[str]]:
-    """Validate the structure of the models.json file."""
 
     errors = []
 
@@ -36,7 +35,6 @@ def validate_structure(data: dict) -> tuple[bool, list[str]]:
 
 
 def main() -> int:
-    """Main function to validate the models.json file."""
 
     data = load_models()
 
