@@ -6,7 +6,6 @@ BASE_DIR = Path(__file__).parent
 MODELS_FILE = BASE_DIR / "data" / "models.json"
 
 def load_models(file_path: Path = MODELS_FILE) -> dict | None:
-    """Load models.json file and return the parsed data."""
 
     if not file_path.exists(): 
         print(f"❌ Error: File '{file_path}' not found.")
@@ -36,18 +35,12 @@ def get_providers() -> list[str]:
 
 
 def provider_exists(provider: str) -> bool:
-    """
-    Check if a provider exists in models.json.
-    """
     providers = get_providers()
 
     return provider in providers
 
 
 def get_models(provider: str) -> list[dict] | None:
-    """
-    Return all models for a provider.
-    """
 
     data = load_models()
 
@@ -58,9 +51,6 @@ def get_models(provider: str) -> list[dict] | None:
 
 
 def model_exists(provider: str, model_name: str) -> bool:
-    """
-    Check whether a model exists for a provider.
-    """
     models = get_models(provider)
 
     if not models:
@@ -74,9 +64,6 @@ def model_exists(provider: str, model_name: str) -> bool:
 
 
 def model_id_exists(provider: str, model_id: str) -> bool:
-    """
-    Check whether a model ID exists for a provider.
-    """
 
     models = get_models(provider)
 
@@ -91,9 +78,6 @@ def model_id_exists(provider: str, model_id: str) -> bool:
 
 
 def get_model_id(provider: str, model_name: str) -> str | None:
-    """
-    Return the model ID for a given provider and model name.
-    """
 
     models = get_models(provider)
 
@@ -108,9 +92,6 @@ def get_model_id(provider: str, model_name: str) -> str | None:
 
 
 def get_model_name(model_id: str) -> str | None:
-    """
-    Return the display name for a model ID.
-    """
     data = load_models()
 
     if not data:
@@ -125,11 +106,6 @@ def get_model_name(model_id: str) -> str | None:
 
 
 def find_model(query: str) -> list[dict[str, str]]:
-    """
-    Search for models by name (case-insensitive)
-
-    Returns a list of matching models.
-    """
 
     data = load_models()
 
@@ -154,10 +130,6 @@ def find_model(query: str) -> list[dict[str, str]]:
 
 
 def sync_models():
-    """
-    Fetch the latest models from Hack Club AI 
-    and update the local model registry.
-    """
 
     response = requests.get(
         "https://ai.hackclub.com/proxy/v1/models",
@@ -168,24 +140,38 @@ def sync_models():
 
     data = response.json()
 
-    model = data["data"][0]
+    models = {}
+    seen_ids = set()
 
-    name = model["name"]
-    model_id = model["id"]
-    context_length = model["context_length"]
-    input_modalities = model["architecture"]["input_modalities"]
-    output_modalities = model["architecture"]["output_modalities"]
-    reasoning = model["reasoning"]
-    pricing = model["pricing"]
+    for model in data["data"]:
+        provider = model["id"].split('/')[0]
+        name = model["name"]
+        model_id = model["id"]
 
-    model_data = {
-        "name": name,
-        "id": model_id,
-        "context_length": context_length,
-        "input_modalities": input_modalities,
-        "output_modalities": output_modalities,
-        "reasoning": reasoning,
-        "pricing": pricing
-    }
+        if model_id in seen_ids:
+            continue
+
+        seen_ids.add(model_id)
+        
+        context_length = model["context_length"]
+        input_modalities = model["architecture"]["input_modalities"]
+        output_modalities = model["architecture"]["output_modalities"]
+        reasoning = model.get("reasoning")
+        pricing = model["pricing"]
+
+        model_data = {
+            "name": name,
+            "id": model_id,
+            "context_length": context_length,
+            "input_modalities": input_modalities,
+            "output_modalities": output_modalities,
+            "reasoning": reasoning,
+            "pricing": pricing
+        }
+
+        models.setdefault(provider, []).append(model_data)
+
+    with MODELS_FILE.open("w", encoding = "utf-8") as f:
+        json.dump(models, f, indent = 4)
 
 sync_models()
