@@ -22,9 +22,6 @@ def handle_command(prompt, config, history):
     elif command == "/clear":
         return cmd_clear(config, history)
 
-    elif command == "/help":
-        return cmd_help()
-
     return False
 
 
@@ -36,15 +33,7 @@ def cmd_exit():
 
 
 def cmd_use(prompt: str, config: dict, history: list) -> bool:
-    """
-    Switch the current AI model.
-
-    Usage:
-        /use
-        /use claude
-        /use gemini
-        /use gpt
-    """
+    
     parts = prompt.split(maxsplit=1)
 
     # ==========================
@@ -158,7 +147,8 @@ def switch_model(config, history, provider, model):
     config["provider"] = provider
     config["model"] = model["id"]
 
-    save_config(config)
+    if not save_config(config):
+        return False
 
     history.clear()
     history.extend(load_history(model["id"]))

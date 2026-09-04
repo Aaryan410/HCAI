@@ -1,4 +1,4 @@
-from hcai.config import config_exists, load_config
+from hcai.config import config_exists, load_config, validate_config
 from hcai.client import chat
 from hcai.history import load_history, save_history
 from hcai.setup import run_setup
@@ -21,6 +21,14 @@ def main():
 
     config = load_config()
 
+    if config is None:
+        print("❌ Failed to load configuration.")
+        raise SystemExit(1)
+
+    if not validate_config(config):
+        print("❌ Invalid Configuration")
+        raise SystemExit(1)
+
     print()
     print("=" * 50)
     print("HCAI v1.0")
@@ -31,10 +39,6 @@ def main():
     print("Type /help for available commands.")
     print("=" * 50)
     print()
-
-    if config is None:
-        print("❌ Failed to load configuration.")
-        exit(1)
 
     history = load_history(config["model"])
 

@@ -4302,9 +4302,9 @@
                 "default_effort": "high"
             },
             "pricing": {
-                "prompt": "0.00000044",
-                "completion": "0.00000132",
-                "input_cache_read": "0.000000014",
+                "prompt": "0.00000022",
+                "completion": "0.00000066",
+                "input_cache_read": "0.000000007",
                 "overrides": [
                     {
                         "utc_days": [
@@ -4408,9 +4408,9 @@
                 "default_effort": "high"
             },
             "pricing": {
-                "prompt": "0.0000011154",
-                "completion": "0.0000033462",
-                "input_cache_read": "0.00000003718"
+                "prompt": "0.00000057948",
+                "completion": "0.00000173844",
+                "input_cache_read": "0.000000019316"
             }
         },
         {
@@ -4509,9 +4509,9 @@
                 "default_effort": "high"
             },
             "pricing": {
-                "prompt": "0.00000104226",
-                "completion": "0.00000208452",
-                "input_cache_read": "0.000000086855"
+                "prompt": "0.00000102225",
+                "completion": "0.0000020445",
+                "input_cache_read": "0.0000000851875"
             }
         },
         {
@@ -4533,9 +4533,9 @@
                 "default_effort": "high"
             },
             "pricing": {
-                "prompt": "0.000000088606",
-                "completion": "0.000000177212",
-                "input_cache_read": "0.0000000177212"
+                "prompt": "0.00000008806",
+                "completion": "0.00000017612",
+                "input_cache_read": "0.000000017612"
             }
         },
         {
@@ -5522,9 +5522,9 @@
                 "default_effort": "high"
             },
             "pricing": {
-                "prompt": "0.00000005",
-                "completion": "0.00000016",
-                "input_cache_read": "0.000000013"
+                "prompt": "0.00000004998",
+                "completion": "0.00000009996",
+                "input_cache_read": "0.000000009996"
             }
         }
     ],

@@ -80,7 +80,7 @@ def validate_structure(data: dict) -> tuple[bool, list[str]]:
                     if not isinstance(reasoning["supported_efforts"], list) or not reasoning["supported_efforts"]:
                         errors.append(f"Provider '{provider}' item #{index} has an invalid 'reasoning.supported_efforts'.")
                     elif not all(isinstance(effort, str) for effort in reasoning["supported_efforts"]):
-                        errors.append(f"Provider '{provider}' item #{index} has an invalid values in 'reasoning.supported_efforts'")
+                        errors.append(f"Provider '{provider}' item #{index} has an invalid values in /;.'reasoning.supported_efforts'")
 
                 if "default_effort" in reasoning and not isinstance(reasoning["default_effort"], str):
                     errors.append(f"Provider '{provider}' item #{index} has an invalid 'reasoning.default_effort'.")

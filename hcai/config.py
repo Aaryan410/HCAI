@@ -17,11 +17,14 @@ def config_exists() -> bool:
 
 
 def validate_api_key(api_key: str) -> bool:
+    if not isinstance(api_key, str):
+        return False
+
     return api_key.startswith("sk-hc-v1-")
 
 
     
-def save_config(config_data: dict) -> None:
+def save_config(config_data: dict) -> bool:
     config_path = get_config_path()
 
     try:
@@ -47,7 +50,7 @@ def load_config() -> dict | None:
             return json.load(file)
     
     except json.JSONDecodeError as e:
-        print(f"❌ Configuration file not  found:\n{e}")
+        print(f"❌ Configuration file contains invalid JSON:\n{e}")
         return None
 
     except OSError as e:
@@ -62,8 +65,11 @@ def validate_config(config: dict) -> bool:
         "model"
     }
 
-    if not required_keys.issubset(config):
+    if not isinstance(config, dict):
         return False
+
+    if not required_keys.issubset(config):
+            return False
 
     if not validate_api_key(config["api_key"]):
         return False
