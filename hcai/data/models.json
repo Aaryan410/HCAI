@@ -2560,9 +2560,9 @@
                 "default_effort": "high"
             },
             "pricing": {
-                "prompt": "0.0000000825",
-                "completion": "0.00000033",
-                "input_cache_read": "0.000000020625",
+                "prompt": "0.000000132",
+                "completion": "0.000000528",
+                "input_cache_read": "0.000000033",
                 "overrides": [
                     {
                         "utc_start": 0,
@@ -2737,9 +2737,9 @@
                 "default_effort": "max"
             },
             "pricing": {
-                "prompt": "0.000001148",
-                "completion": "0.000003608",
-                "input_cache_read": "0.0000001886"
+                "prompt": "0.00000115",
+                "completion": "0.0000035",
+                "input_cache_read": "0.0000001"
             }
         }
     ],
@@ -4302,9 +4302,9 @@
                 "default_effort": "high"
             },
             "pricing": {
-                "prompt": "0.00000022",
-                "completion": "0.00000066",
-                "input_cache_read": "0.000000007",
+                "prompt": "0.00000044",
+                "completion": "0.00000132",
+                "input_cache_read": "0.000000014",
                 "overrides": [
                     {
                         "utc_days": [
@@ -4408,9 +4408,9 @@
                 "default_effort": "high"
             },
             "pricing": {
-                "prompt": "0.00000066",
-                "completion": "0.00000198",
-                "input_cache_read": "0.000000022"
+                "prompt": "0.0000011154",
+                "completion": "0.0000033462",
+                "input_cache_read": "0.00000003718"
             }
         },
         {
@@ -4509,9 +4509,9 @@
                 "default_effort": "high"
             },
             "pricing": {
-                "prompt": "0.000001030776",
-                "completion": "0.000002061552",
-                "input_cache_read": "0.000000085898"
+                "prompt": "0.00000104226",
+                "completion": "0.00000208452",
+                "input_cache_read": "0.000000086855"
             }
         },
         {
@@ -4533,9 +4533,9 @@
                 "default_effort": "high"
             },
             "pricing": {
-                "prompt": "0.00000007938",
-                "completion": "0.00000015876",
-                "input_cache_read": "0.000000015876"
+                "prompt": "0.000000088606",
+                "completion": "0.000000177212",
+                "input_cache_read": "0.0000000177212"
             }
         },
         {
@@ -5045,6 +5045,44 @@
             }
         },
         {
+            "name": "SpaceXAI: Grok 4.3 (batch)",
+            "id": "x-ai/grok-4.3:batch",
+            "context_length": 1000000,
+            "input_modalities": [
+                "text",
+                "image",
+                "file"
+            ],
+            "output_modalities": [
+                "text"
+            ],
+            "reasoning": {
+                "mandatory": false,
+                "default_enabled": true,
+                "supported_efforts": [
+                    "high",
+                    "medium",
+                    "low",
+                    "none"
+                ],
+                "default_effort": "low"
+            },
+            "pricing": {
+                "prompt": "0.000001",
+                "completion": "0.000002",
+                "web_search": "0.005",
+                "input_cache_read": "0.00000016",
+                "overrides": [
+                    {
+                        "min_prompt_tokens": 200000,
+                        "prompt": "0.000002",
+                        "completion": "0.000004",
+                        "input_cache_read": "0.00000032"
+                    }
+                ]
+            }
+        },
+        {
             "name": "SpaceXAI: Grok 4.20 Multi-Agent",
             "id": "x-ai/grok-4.20-multi-agent",
             "context_length": 2000000,
@@ -5173,6 +5211,26 @@
             }
         },
         {
+            "name": "NVIDIA: Nemotron 3.5 Content Safety",
+            "id": "nvidia/nemotron-3.5-content-safety",
+            "context_length": 131072,
+            "input_modalities": [
+                "text",
+                "image"
+            ],
+            "output_modalities": [
+                "text"
+            ],
+            "reasoning": {
+                "mandatory": false,
+                "default_enabled": true
+            },
+            "pricing": {
+                "prompt": "0.0000002",
+                "completion": "0.0000002"
+            }
+        },
+        {
             "name": "NVIDIA: Nemotron 3.5 Content Safety (free)",
             "id": "nvidia/nemotron-3.5-content-safety:free",
             "context_length": 128000,
@@ -5213,9 +5271,9 @@
                 "default_effort": "high"
             },
             "pricing": {
-                "prompt": "0.0000006",
-                "completion": "0.0000024",
-                "input_cache_read": "0.00000012"
+                "prompt": "0.000000625",
+                "completion": "0.000003125",
+                "input_cache_read": "0.0000001875"
             }
         },
         {
@@ -9144,7 +9202,7 @@
         {
             "name": "Mistral: Mistral Medium 3.5 (batch)",
             "id": "mistralai/mistral-medium-3-5:batch",
-            "context_length": 262144,
+            "context_length": 32768,
             "input_modalities": [
                 "text",
                 "image",
@@ -10513,7 +10571,7 @@
             ],
             "reasoning": null,
             "pricing": {
-                "prompt": "0.00000045",
+                "prompt": "0.00000035",
                 "completion": "0.00000065"
             }
         }

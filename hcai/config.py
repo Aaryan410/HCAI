@@ -71,9 +71,9 @@ def validate_config(config: dict) -> bool:
     if not provider_exists(config["provider"]):
         return False
 
-    model_name = config["model"]
+    model_id = config["model"]
 
-    if not model_id_exists(config["provider"], model_name):
+    if not model_id_exists(config["provider"], model_id):
         return False
 
     return True
