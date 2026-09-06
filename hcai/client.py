@@ -1,9 +1,11 @@
 import requests
 import json
-from hcai.config import load_config
+from hcai.config import load_config, validate_config
 
 
 API_URL = "https://ai.hackclub.com/proxy/v1/chat/completions"
+TIMEOUT = 60
+
 
 def create_headers(api_key: str) -> dict[str, str]:
 
@@ -33,14 +35,16 @@ def send_message(messages: list[dict[str, str]]) -> requests.Response | None:
         print("❌ Failed to load configuration.")
         return None
 
+    if not validate_config(config):
+        print("❌ Invalid configuration.")
+        return None
+
     api_key = config.get("api_key")
     model = config.get("model")
 
     headers = create_headers(api_key)
 
     payload = create_payload(model, messages)
-
-    TIMEOUT = 60
 
     try:
         response = requests.post(
@@ -90,7 +94,16 @@ def send_message(messages: list[dict[str, str]]) -> requests.Response | None:
             print("Try sending the message again or switch to another model with /use.\n")
 
         else:
-            print(f"\n❌ HTTP Error {status}: {e}\n")
+            print(f"\n❌ HTTP Error {status}")
+
+            if e.response is not None:
+                try:
+                    error_data = e.response.json()
+                    print(f"Details: {error_data}")
+                except ValueError:
+                    print(f"Details: {e.response.text}")
+
+            print()
 
     except requests.exceptions.Timeout:
         print("\n❌ The request timed out.")
@@ -110,37 +123,40 @@ def stream_response(response: requests.Response) -> str:
 
     full_response = ""
 
-    for line in response.iter_lines():
+    try:
+        for line in response.iter_lines():
 
-        if not line:
-            continue
+            if not line:
+                continue
 
-        line = line.decode("utf-8")
+            line = line.decode("utf-8")
 
-        if not line.startswith("data: "):
-            continue
-        
-        if line == "data: [DONE]":
-            break
+            if not line.startswith("data: "):
+                continue
+            
+            if line == "data: [DONE]":
+                break
 
-        try:
-            data = json.loads(line[6:])
+            try:
+                data = json.loads(line[6:])
 
-            choice = data["choices"][0]
+                choice = data["choices"][0]
 
-            delta = choice.get("delta") or {}
+                delta = choice.get("delta") or {}
 
-            content = delta.get("content", "")
+                content = delta.get("content", "")
 
-            if content:
-                print(content, end = "", flush = True)
-                full_response += content
+                if content:
+                    print(content, end = "", flush = True)
+                    full_response += content
 
-        except (json.JSONDecodeError, KeyError, IndexError):
-            continue
+            except (json.JSONDecodeError, KeyError, IndexError):
+                continue
+
+    except requests.exception.RequestException as e:
+        print(f"\n❌ The response stream was interrupted:\n{e}")
 
     print()
-
     return full_response
 
 
@@ -159,6 +175,10 @@ def chat(prompt: str, messages: list[dict]) -> str | None:
         return None
 
     answer = stream_response(response)
+
+    if not answer:
+        print("❌ The AI returned an empty response.")
+        return None
 
     messages.append(
         {
