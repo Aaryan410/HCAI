@@ -1,4 +1,112 @@
 {
+    "inception": [
+        {
+            "name": "Inception: Mercury 2.5",
+            "id": "inception/mercury-2.5",
+            "context_length": 260000,
+            "input_modalities": [
+                "text"
+            ],
+            "output_modalities": [
+                "text"
+            ],
+            "reasoning": {
+                "mandatory": false,
+                "default_enabled": true,
+                "supported_efforts": [
+                    "high",
+                    "medium",
+                    "low",
+                    "none"
+                ],
+                "default_effort": "medium"
+            },
+            "pricing": {
+                "prompt": "0.00000004",
+                "completion": "0.00000015",
+                "input_cache_read": "0.000000004"
+            }
+        },
+        {
+            "name": "Inception: Mercury 2",
+            "id": "inception/mercury-2",
+            "context_length": 128000,
+            "input_modalities": [
+                "text"
+            ],
+            "output_modalities": [
+                "text"
+            ],
+            "reasoning": {
+                "mandatory": false,
+                "default_enabled": true,
+                "supported_efforts": [
+                    "high",
+                    "medium",
+                    "low",
+                    "none"
+                ],
+                "default_effort": "medium"
+            },
+            "pricing": {
+                "prompt": "0.00000025",
+                "completion": "0.00000075",
+                "input_cache_read": "0.000000025"
+            }
+        }
+    ],
+    "nex-agi": [
+        {
+            "name": "Nex AGI: Nex-N2.5-Mini (free)",
+            "id": "nex-agi/nex-n2.5-mini:free",
+            "context_length": 262144,
+            "input_modalities": [
+                "text",
+                "image"
+            ],
+            "output_modalities": [
+                "text"
+            ],
+            "reasoning": {
+                "mandatory": false,
+                "supported_efforts": [
+                    "high",
+                    "medium",
+                    "none"
+                ],
+                "default_effort": "high"
+            },
+            "pricing": {
+                "prompt": "0",
+                "completion": "0"
+            }
+        },
+        {
+            "name": "Nex AGI: Nex-N2.5-Pro (free)",
+            "id": "nex-agi/nex-n2.5-pro:free",
+            "context_length": 262144,
+            "input_modalities": [
+                "text",
+                "image"
+            ],
+            "output_modalities": [
+                "text"
+            ],
+            "reasoning": {
+                "mandatory": false,
+                "supported_efforts": [
+                    "high",
+                    "medium",
+                    "none"
+                ],
+                "default_effort": "high"
+            },
+            "pricing": {
+                "prompt": "0",
+                "completion": "0"
+            }
+        }
+    ],
     "openai": [
         {
             "name": "OpenAI: GPT-6 Astra",
@@ -3503,9 +3611,8 @@
             ],
             "reasoning": null,
             "pricing": {
-                "prompt": "0.0000001",
-                "completion": "0.0000011",
-                "input_cache_read": "0.00000007"
+                "prompt": "0.00000009",
+                "completion": "0.0000011"
             }
         },
         {
@@ -3630,8 +3737,8 @@
             ],
             "reasoning": null,
             "pricing": {
-                "prompt": "0.00000009",
-                "completion": "0.00000055"
+                "prompt": "0.00000022",
+                "completion": "0.00000088"
             }
         },
         {
@@ -3686,8 +3793,8 @@
                 "mandatory": false
             },
             "pricing": {
-                "prompt": "0.00000012",
-                "completion": "0.00000024"
+                "prompt": "0.0000002275",
+                "completion": "0.00000091"
             }
         },
         {
@@ -3968,9 +4075,9 @@
                 "default_effort": "medium"
             },
             "pricing": {
-                "prompt": "0.00000035",
-                "completion": "0.0000015",
-                "input_cache_read": "0.00000004"
+                "prompt": "0.000000175",
+                "completion": "0.00000075",
+                "input_cache_read": "0.00000002"
             }
         },
         {
@@ -6170,62 +6277,6 @@
             }
         }
     ],
-    "inception": [
-        {
-            "name": "Inception: Mercury 2.5 Preview",
-            "id": "inception/mercury-2.5-preview",
-            "context_length": 260000,
-            "input_modalities": [
-                "text"
-            ],
-            "output_modalities": [
-                "text"
-            ],
-            "reasoning": {
-                "mandatory": false,
-                "default_enabled": true,
-                "supported_efforts": [
-                    "high",
-                    "medium",
-                    "low",
-                    "none"
-                ],
-                "default_effort": "medium"
-            },
-            "pricing": {
-                "prompt": "0.00000004",
-                "completion": "0.00000015",
-                "input_cache_read": "0.000000004"
-            }
-        },
-        {
-            "name": "Inception: Mercury 2",
-            "id": "inception/mercury-2",
-            "context_length": 128000,
-            "input_modalities": [
-                "text"
-            ],
-            "output_modalities": [
-                "text"
-            ],
-            "reasoning": {
-                "mandatory": false,
-                "default_enabled": true,
-                "supported_efforts": [
-                    "high",
-                    "medium",
-                    "low",
-                    "none"
-                ],
-                "default_effort": "medium"
-            },
-            "pricing": {
-                "prompt": "0.00000025",
-                "completion": "0.00000075",
-                "input_cache_read": "0.000000025"
-            }
-        }
-    ],
     "ibm-granite": [
         {
             "name": "IBM: Granite 4.2 8B",
@@ -6248,9 +6299,9 @@
                 "default_effort": "high"
             },
             "pricing": {
-                "prompt": "0.0000001",
-                "completion": "0.00000015",
-                "input_cache_read": "0.00000005"
+                "prompt": "0.00000006",
+                "completion": "0.00000025",
+                "input_cache_read": "0.000000015"
             }
         },
         {
@@ -6464,7 +6515,7 @@
         {
             "name": "Z.ai: GLM Latest",
             "id": "~z-ai/glm-latest",
-            "context_length": 1310720,
+            "context_length": 1048576,
             "input_modalities": [
                 "text"
             ],
@@ -6482,9 +6533,9 @@
                 "default_effort": "max"
             },
             "pricing": {
-                "prompt": "0.00000117",
-                "completion": "0.00000396",
-                "input_cache_read": "0.000000234"
+                "prompt": "0.000001113",
+                "completion": "0.000003498",
+                "input_cache_read": "0.0000002067"
             }
         }
     ],
@@ -6520,7 +6571,7 @@
         {
             "name": "Z.ai: GLM 5.3 Flash (batch)",
             "id": "z-ai/glm-5.3-flash:batch",
-            "context_length": 1048575,
+            "context_length": 1048576,
             "input_modalities": [
                 "text",
                 "image",
@@ -6540,15 +6591,15 @@
                 "default_effort": "max"
             },
             "pricing": {
-                "prompt": "0.00000015",
-                "completion": "0.0000005",
-                "input_cache_read": "0.00000003"
+                "prompt": "0.000000075",
+                "completion": "0.00000025",
+                "input_cache_read": "0.000000015"
             }
         },
         {
             "name": "Z.ai: GLM 5.3",
             "id": "z-ai/glm-5.3",
-            "context_length": 1310720,
+            "context_length": 1048576,
             "input_modalities": [
                 "text"
             ],
@@ -6568,7 +6619,33 @@
             "pricing": {
                 "prompt": "0.0000014",
                 "completion": "0.0000044",
-                "input_cache_read": "0.00000014"
+                "input_cache_read": "0.00000026"
+            }
+        },
+        {
+            "name": "Z.ai: GLM 5.3 (batch)",
+            "id": "z-ai/glm-5.3:batch",
+            "context_length": 1048576,
+            "input_modalities": [
+                "text"
+            ],
+            "output_modalities": [
+                "text"
+            ],
+            "reasoning": {
+                "mandatory": true,
+                "default_enabled": true,
+                "supported_efforts": [
+                    "max",
+                    "high",
+                    "low"
+                ],
+                "default_effort": "max"
+            },
+            "pricing": {
+                "prompt": "0.0000007",
+                "completion": "0.0000022",
+                "input_cache_read": "0.00000013"
             }
         },
         {
@@ -6591,9 +6668,34 @@
                 "default_effort": "high"
             },
             "pricing": {
-                "prompt": "0.000000966",
-                "completion": "0.000003036",
-                "input_cache_read": "0.0000001932"
+                "prompt": "0.00000028",
+                "completion": "0.00000088",
+                "input_cache_read": "0.000000052"
+            }
+        },
+        {
+            "name": "Z.ai: GLM 5.2 (batch)",
+            "id": "z-ai/glm-5.2:batch",
+            "context_length": 1048576,
+            "input_modalities": [
+                "text"
+            ],
+            "output_modalities": [
+                "text"
+            ],
+            "reasoning": {
+                "mandatory": false,
+                "default_enabled": true,
+                "supported_efforts": [
+                    "xhigh",
+                    "high"
+                ],
+                "default_effort": "high"
+            },
+            "pricing": {
+                "prompt": "0.0000007",
+                "completion": "0.0000022",
+                "input_cache_read": "0.00000007"
             }
         },
         {
@@ -6693,9 +6795,8 @@
                 "default_enabled": true
             },
             "pricing": {
-                "prompt": "0.00000006",
-                "completion": "0.0000004",
-                "input_cache_read": "0.00000001"
+                "prompt": "0.0000000605",
+                "completion": "0.0000004"
             }
         },
         {
@@ -6753,9 +6854,9 @@
                 "mandatory": false
             },
             "pricing": {
-                "prompt": "0.00000055",
-                "completion": "0.0000022",
-                "input_cache_read": "0.00000011"
+                "prompt": "0.00000043",
+                "completion": "0.00000175",
+                "input_cache_read": "0.00000008"
             }
         },
         {
@@ -6842,88 +6943,34 @@
             "pricing": {
                 "prompt": "0.00000022",
                 "completion": "0.00000066",
-                "input_cache_read": "0.000000007",
-                "overrides": [
-                    {
-                        "utc_days": [
-                            "saturday",
-                            "sunday"
-                        ],
-                        "prompt": "0.00000022",
-                        "completion": "0.00000066",
-                        "input_cache_read": "0.000000007"
-                    },
-                    {
-                        "utc_days": [
-                            "monday",
-                            "tuesday",
-                            "wednesday",
-                            "thursday",
-                            "friday"
-                        ],
-                        "utc_start": 0,
-                        "utc_end": 100,
-                        "prompt": "0.00000022",
-                        "completion": "0.00000066",
-                        "input_cache_read": "0.000000007"
-                    },
-                    {
-                        "utc_days": [
-                            "monday",
-                            "tuesday",
-                            "wednesday",
-                            "thursday",
-                            "friday"
-                        ],
-                        "utc_start": 100,
-                        "utc_end": 400,
-                        "prompt": "0.00000044",
-                        "completion": "0.00000132",
-                        "input_cache_read": "0.000000014"
-                    },
-                    {
-                        "utc_days": [
-                            "monday",
-                            "tuesday",
-                            "wednesday",
-                            "thursday",
-                            "friday"
-                        ],
-                        "utc_start": 400,
-                        "utc_end": 600,
-                        "prompt": "0.00000022",
-                        "completion": "0.00000066",
-                        "input_cache_read": "0.000000007"
-                    },
-                    {
-                        "utc_days": [
-                            "monday",
-                            "tuesday",
-                            "wednesday",
-                            "thursday",
-                            "friday"
-                        ],
-                        "utc_start": 600,
-                        "utc_end": 1000,
-                        "prompt": "0.00000044",
-                        "completion": "0.00000132",
-                        "input_cache_read": "0.000000014"
-                    },
-                    {
-                        "utc_days": [
-                            "monday",
-                            "tuesday",
-                            "wednesday",
-                            "thursday",
-                            "friday"
-                        ],
-                        "utc_start": 1000,
-                        "utc_end": 0,
-                        "prompt": "0.00000022",
-                        "completion": "0.00000066",
-                        "input_cache_read": "0.000000007"
-                    }
-                ]
+                "input_cache_read": "0.000000007"
+            }
+        },
+        {
+            "name": "DeepSeek: DeepSeek V4 Flash Vision Exp (batch)",
+            "id": "deepseek/deepseek-v4-flash-vision-exp:batch",
+            "context_length": 1048576,
+            "input_modalities": [
+                "text",
+                "image"
+            ],
+            "output_modalities": [
+                "text"
+            ],
+            "reasoning": {
+                "mandatory": false,
+                "default_enabled": true,
+                "supported_efforts": [
+                    "max",
+                    "high",
+                    "low"
+                ],
+                "default_effort": "high"
+            },
+            "pricing": {
+                "prompt": "0.00000011",
+                "completion": "0.00000033",
+                "input_cache_read": "0.0000000035"
             }
         },
         {
@@ -6948,7 +6995,7 @@
             "pricing": {
                 "prompt": "0.00000057948",
                 "completion": "0.00000173844",
-                "input_cache_read": "0.000000019316"
+                "input_cache_read": "0.000000018438"
             }
         },
         {
@@ -6971,9 +7018,9 @@
                 "default_effort": "high"
             },
             "pricing": {
-                "prompt": "0.00000132",
-                "completion": "0.00000396",
-                "input_cache_read": "0.00000013"
+                "prompt": "0.00000066",
+                "completion": "0.00000198",
+                "input_cache_read": "0.000000022"
             }
         },
         {
@@ -6997,9 +7044,9 @@
                 "default_effort": "high"
             },
             "pricing": {
-                "prompt": "0.00000004998",
-                "completion": "0.00000009996",
-                "input_cache_read": "0.000000009996"
+                "prompt": "0.000000065",
+                "completion": "0.00000018",
+                "input_cache_read": "0.000000016"
             }
         },
         {
@@ -7023,9 +7070,9 @@
                 "default_effort": "high"
             },
             "pricing": {
-                "prompt": "0.00000014",
-                "completion": "0.00000028",
-                "input_cache_read": "0.00000003"
+                "prompt": "0.00000011",
+                "completion": "0.00000033",
+                "input_cache_read": "0.0000000035"
             }
         },
         {
@@ -7047,9 +7094,9 @@
                 "default_effort": "high"
             },
             "pricing": {
-                "prompt": "0.000000657198",
-                "completion": "0.000001314396",
-                "input_cache_read": "0.0000000547665"
+                "prompt": "0.00000087",
+                "completion": "0.00000174",
+                "input_cache_read": "0.0000000725"
             }
         },
         {
@@ -7071,9 +7118,9 @@
                 "default_effort": "high"
             },
             "pricing": {
-                "prompt": "0.00000008022",
-                "completion": "0.00000016044",
-                "input_cache_read": "0.000000016044"
+                "prompt": "0.000000084",
+                "completion": "0.000000168",
+                "input_cache_read": "0.0000000168"
             }
         },
         {
@@ -7147,9 +7194,9 @@
                 "mandatory": false
             },
             "pricing": {
-                "prompt": "0.00000055",
-                "completion": "0.00000165",
-                "input_cache_read": "0.00000055"
+                "prompt": "0.00000025",
+                "completion": "0.00000095",
+                "input_cache_read": "0.00000013"
             }
         },
         {
@@ -7183,8 +7230,9 @@
             ],
             "reasoning": null,
             "pricing": {
-                "prompt": "0.00000025",
-                "completion": "0.000001"
+                "prompt": "0.00000029",
+                "completion": "0.00000114",
+                "input_cache_read": "0.00000011"
             }
         },
         {
@@ -7865,7 +7913,7 @@
         {
             "name": "NVIDIA: Nemotron 3 Super",
             "id": "nvidia/nemotron-3-super-120b-a12b",
-            "context_length": 1000000,
+            "context_length": 262144,
             "input_modalities": [
                 "text"
             ],
@@ -8060,9 +8108,9 @@
                 "default_effort": "high"
             },
             "pricing": {
-                "prompt": "0.000000045",
-                "completion": "0.00000009",
-                "input_cache_read": "0.000000009"
+                "prompt": "0.00000005",
+                "completion": "0.00000016",
+                "input_cache_read": "0.000000013"
             }
         }
     ],
@@ -8537,9 +8585,9 @@
                 "default_enabled": true
             },
             "pricing": {
-                "prompt": "0.00000066",
-                "completion": "0.0000034",
-                "input_cache_read": "0.00000018"
+                "prompt": "0.00000071",
+                "completion": "0.0000035",
+                "input_cache_read": "0.00000015"
             }
         },
         {
@@ -8600,8 +8648,7 @@
             },
             "pricing": {
                 "prompt": "0.0000006",
-                "completion": "0.0000025",
-                "input_cache_read": "0.00000015"
+                "completion": "0.0000025"
             }
         },
         {
@@ -8785,48 +8832,6 @@
             "pricing": {
                 "prompt": "0.0000008",
                 "completion": "0.0000016"
-            }
-        }
-    ],
-    "nex-agi": [
-        {
-            "name": "Nex AGI: Nex-N2-Mini",
-            "id": "nex-agi/nex-n2-mini",
-            "context_length": 262144,
-            "input_modalities": [
-                "text",
-                "image"
-            ],
-            "output_modalities": [
-                "text"
-            ],
-            "reasoning": {
-                "mandatory": false
-            },
-            "pricing": {
-                "prompt": "0.000000025",
-                "completion": "0.0000001",
-                "input_cache_read": "0.0000000025"
-            }
-        },
-        {
-            "name": "Nex AGI: Nex-N2-Pro",
-            "id": "nex-agi/nex-n2-pro",
-            "context_length": 262144,
-            "input_modalities": [
-                "text",
-                "image"
-            ],
-            "output_modalities": [
-                "text"
-            ],
-            "reasoning": {
-                "mandatory": false
-            },
-            "pricing": {
-                "prompt": "0.00000025",
-                "completion": "0.000001",
-                "input_cache_read": "0.000000025"
             }
         }
     ],
@@ -9082,26 +9087,6 @@
             }
         },
         {
-            "name": "MiniMax: MiniMax M3 (free)",
-            "id": "minimax/minimax-m3:free",
-            "context_length": 1048576,
-            "input_modalities": [
-                "text",
-                "image",
-                "video"
-            ],
-            "output_modalities": [
-                "text"
-            ],
-            "reasoning": {
-                "mandatory": false
-            },
-            "pricing": {
-                "prompt": "0",
-                "completion": "0"
-            }
-        },
-        {
             "name": "MiniMax: MiniMax M2.7",
             "id": "minimax/minimax-m2.7",
             "context_length": 204800,
@@ -9118,24 +9103,6 @@
                 "prompt": "0.0000003",
                 "completion": "0.0000012",
                 "input_cache_read": "0.00000006"
-            }
-        },
-        {
-            "name": "MiniMax: MiniMax M2.7 (free)",
-            "id": "minimax/minimax-m2.7:free",
-            "context_length": 196608,
-            "input_modalities": [
-                "text"
-            ],
-            "output_modalities": [
-                "text"
-            ],
-            "reasoning": {
-                "mandatory": true
-            },
-            "pricing": {
-                "prompt": "0",
-                "completion": "0"
             }
         },
         {
@@ -9345,7 +9312,7 @@
         {
             "name": "Mistral: Mistral Medium 3.5 (batch)",
             "id": "mistralai/mistral-medium-3-5:batch",
-            "context_length": 32768,
+            "context_length": 262144,
             "input_modalities": [
                 "text",
                 "image",
@@ -9881,9 +9848,9 @@
                 "default_effort": "max"
             },
             "pricing": {
-                "prompt": "0.00000255",
-                "completion": "0.00001275",
-                "input_cache_read": "0.00000025599999"
+                "prompt": "0.0000024",
+                "completion": "0.000012",
+                "input_cache_read": "0.00000024"
             }
         }
     ],
@@ -10285,24 +10252,6 @@
         }
     ],
     "nousresearch": [
-        {
-            "name": "Nous: Hermes 4 70B",
-            "id": "nousresearch/hermes-4-70b",
-            "context_length": 131072,
-            "input_modalities": [
-                "text"
-            ],
-            "output_modalities": [
-                "text"
-            ],
-            "reasoning": {
-                "mandatory": false
-            },
-            "pricing": {
-                "prompt": "0.00000013",
-                "completion": "0.0000004"
-            }
-        },
         {
             "name": "Nous: Hermes 4 405B",
             "id": "nousresearch/hermes-4-405b",

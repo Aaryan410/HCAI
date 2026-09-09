@@ -22,7 +22,9 @@ def handle_command(prompt, config, history):
     elif command == "/clear":
         return cmd_clear(config, history)
 
-    return False
+    print(f"❌ Unknown command: {command}")
+    print("Type /help to see available commands.")
+    return True
 
 
 def cmd_exit():

@@ -119,12 +119,10 @@ def send_message(messages: list[dict[str, str]]) -> requests.Response | None:
     return None
 
 
-def stream_response(response: requests.Response) -> str:
-
-    full_response = ""
+def stream_response(response: requests.Response):
 
     try:
-        for line in response.iter_lines():
+        for line in response.iter_lines(chunk_size=1):
 
             if not line:
                 continue
@@ -141,26 +139,22 @@ def stream_response(response: requests.Response) -> str:
                 data = json.loads(line[6:])
 
                 choice = data["choices"][0]
-
                 delta = choice.get("delta") or {}
-
                 content = delta.get("content", "")
 
                 if content:
-                    print(content, end = "", flush = True)
-                    full_response += content
+                    yield content
 
             except (json.JSONDecodeError, KeyError, IndexError):
                 continue
 
-    except requests.exception.RequestException as e:
+    except requests.exceptions.RequestException as e:
         print(f"\n❌ The response stream was interrupted:\n{e}")
 
     print()
-    return full_response
 
 
-def chat(prompt: str, messages: list[dict]) -> str | None:
+def chat(prompt: str, messages: list[dict]):
 
     messages.append(
         {
@@ -174,17 +168,32 @@ def chat(prompt: str, messages: list[dict]) -> str | None:
     if response is None: 
         return None
 
-    answer = stream_response(response)
+    answer = ""
 
-    if not answer:
+    for chunk in stream_response(response):
+        answer += chunk
+        yield chunk
+
+    if answer:
+        messages.append(
+                {
+                    "role": "assistant",
+                    "content": answer
+                }
+            )
+    else:
         print("❌ The AI returned an empty response.")
         return None
 
-    messages.append(
-        {
-            "role": "assistant",
-            "content": answer
-        }
-    )
-
     return answer
+
+def render_stream(chunks):
+    full_response = ""
+
+    for chunk in chunks:
+        full_response += chunk
+        print(chunk, end="", flush=True)
+
+    print()
+
+    return full_response
