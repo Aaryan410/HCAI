@@ -4,22 +4,7 @@ from hcai.history import load_history, save_history
 from hcai.setup import run_setup
 from hcai.commands import handle_command
 from hcai.models import get_model_name
-from hcai.ui import render_stream
-
-def print_banner():
-    print()
-    print("=" * 50)
-    print("HCAI v1.0.2")
-    print("=" * 50)
-
-
-def print_model_info(config):
-    print(f"Provider : {config['provider']}")
-    print(f"Model    : {get_model_name(config['model'])}")
-    print()
-    print("Type /help for available commands.")
-    print("=" * 50)
-    print()
+from hcai.ui import render_stream, print_banner, print_user_message, console
 
 
 def main():
@@ -46,14 +31,15 @@ def main():
         print("❌ Invalid Configuration")
         raise SystemExit(1)
 
-    print_banner()
-    print_model_info(config)
+    model_name = get_model_name(config["model"]) or config["model"]
+
+    print_banner(config, model_name)
 
     history = load_history(config["model"])
 
     try:
         while True:
-            prompt = input("HCAI > ").strip()
+            prompt = console.input("[bold]HCAI > [/bold]").strip()
 
             if not prompt:
                 continue
@@ -67,7 +53,10 @@ def main():
                 if handled:
                     continue
 
-            answer = render_stream(chat(prompt, history))
+            print_user_message(prompt)
+
+            meta = {}
+            answer = render_stream(chat(prompt, history, meta), model_name, meta)
 
             if answer:
                 save_history(config["model"], history)

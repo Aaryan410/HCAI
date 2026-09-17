@@ -1,4 +1,1233 @@
 {
+    "stealth": [
+        {
+            "name": "Union Alpha",
+            "id": "stealth/union-alpha",
+            "context_length": 262144,
+            "input_modalities": [
+                "text",
+                "image"
+            ],
+            "output_modalities": [
+                "text"
+            ],
+            "reasoning": null,
+            "pricing": {
+                "prompt": "0",
+                "completion": "0"
+            }
+        }
+    ],
+    "~deepseek": [
+        {
+            "name": "DeepSeek: DeepSeek Pro Latest",
+            "id": "~deepseek/deepseek-pro-latest",
+            "context_length": 1048576,
+            "input_modalities": [
+                "text"
+            ],
+            "output_modalities": [
+                "text"
+            ],
+            "reasoning": {
+                "mandatory": false,
+                "supported_efforts": [
+                    "max",
+                    "high",
+                    "low"
+                ],
+                "default_effort": "high"
+            },
+            "pricing": {
+                "prompt": "0.00000066",
+                "completion": "0.00000198",
+                "input_cache_read": "0.000000022",
+                "overrides": [
+                    {
+                        "utc_days": [
+                            "saturday",
+                            "sunday"
+                        ],
+                        "prompt": "0.00000066",
+                        "completion": "0.00000198",
+                        "input_cache_read": "0.000000022"
+                    },
+                    {
+                        "utc_days": [
+                            "monday",
+                            "tuesday",
+                            "wednesday",
+                            "thursday",
+                            "friday"
+                        ],
+                        "utc_start": 0,
+                        "utc_end": 100,
+                        "prompt": "0.00000066",
+                        "completion": "0.00000198",
+                        "input_cache_read": "0.000000022"
+                    },
+                    {
+                        "utc_days": [
+                            "monday",
+                            "tuesday",
+                            "wednesday",
+                            "thursday",
+                            "friday"
+                        ],
+                        "utc_start": 100,
+                        "utc_end": 400,
+                        "prompt": "0.00000132",
+                        "completion": "0.00000396",
+                        "input_cache_read": "0.000000044"
+                    },
+                    {
+                        "utc_days": [
+                            "monday",
+                            "tuesday",
+                            "wednesday",
+                            "thursday",
+                            "friday"
+                        ],
+                        "utc_start": 400,
+                        "utc_end": 600,
+                        "prompt": "0.00000066",
+                        "completion": "0.00000198",
+                        "input_cache_read": "0.000000022"
+                    },
+                    {
+                        "utc_days": [
+                            "monday",
+                            "tuesday",
+                            "wednesday",
+                            "thursday",
+                            "friday"
+                        ],
+                        "utc_start": 600,
+                        "utc_end": 1000,
+                        "prompt": "0.00000132",
+                        "completion": "0.00000396",
+                        "input_cache_read": "0.000000044"
+                    },
+                    {
+                        "utc_days": [
+                            "monday",
+                            "tuesday",
+                            "wednesday",
+                            "thursday",
+                            "friday"
+                        ],
+                        "utc_start": 1000,
+                        "utc_end": 0,
+                        "prompt": "0.00000066",
+                        "completion": "0.00000198",
+                        "input_cache_read": "0.000000022"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "DeepSeek: DeepSeek Flash Latest",
+            "id": "~deepseek/deepseek-flash-latest",
+            "context_length": 1048576,
+            "input_modalities": [
+                "text",
+                "image"
+            ],
+            "output_modalities": [
+                "text"
+            ],
+            "reasoning": {
+                "mandatory": false,
+                "default_enabled": true,
+                "supported_efforts": [
+                    "max",
+                    "high",
+                    "low"
+                ],
+                "default_effort": "high"
+            },
+            "pricing": {
+                "prompt": "0.00000015",
+                "completion": "0.0000006",
+                "input_cache_read": "0.000000015"
+            }
+        },
+        {
+            "name": "DeepSeek: DeepSeek V4 Flash Latest",
+            "id": "~deepseek/deepseek-v4-flash-latest",
+            "context_length": 1310720,
+            "input_modalities": [
+                "text"
+            ],
+            "output_modalities": [
+                "text"
+            ],
+            "reasoning": {
+                "mandatory": false,
+                "default_enabled": true,
+                "supported_efforts": [
+                    "max",
+                    "high",
+                    "low"
+                ],
+                "default_effort": "high"
+            },
+            "pricing": {
+                "prompt": "0.00000003",
+                "completion": "0.00000013",
+                "input_cache_read": "0.00000001"
+            }
+        }
+    ],
+    "inference-net": [
+        {
+            "name": "Inference.net: Schematron V2 Turbo",
+            "id": "inference-net/schematron-v2-turbo",
+            "context_length": 128000,
+            "input_modalities": [
+                "text"
+            ],
+            "output_modalities": [
+                "text"
+            ],
+            "reasoning": null,
+            "pricing": {
+                "prompt": "0.00000003",
+                "completion": "0.00000015",
+                "input_cache_read": "0.00000003"
+            }
+        },
+        {
+            "name": "Inference.net: Schematron V2 Small",
+            "id": "inference-net/schematron-v2-small",
+            "context_length": 128000,
+            "input_modalities": [
+                "text"
+            ],
+            "output_modalities": [
+                "text"
+            ],
+            "reasoning": null,
+            "pricing": {
+                "prompt": "0.00000005",
+                "completion": "0.00000023",
+                "input_cache_read": "0.00000005"
+            }
+        }
+    ],
+    "~openai": [
+        {
+            "name": "OpenAI: GPT Astra Latest",
+            "id": "~openai/gpt-astra-latest",
+            "context_length": 1050000,
+            "input_modalities": [
+                "file",
+                "image",
+                "text"
+            ],
+            "output_modalities": [
+                "text"
+            ],
+            "reasoning": {
+                "mandatory": true,
+                "default_enabled": true,
+                "supported_efforts": [
+                    "max",
+                    "xhigh",
+                    "high",
+                    "medium",
+                    "low"
+                ],
+                "default_effort": "medium"
+            },
+            "pricing": {
+                "prompt": "0.00001",
+                "completion": "0.00005",
+                "web_search": "0.01",
+                "input_cache_read": "0.000001",
+                "input_cache_write": "0.0000125",
+                "overrides": [
+                    {
+                        "min_prompt_tokens": 272000,
+                        "prompt": "0.00002",
+                        "completion": "0.000075",
+                        "input_cache_read": "0.000002",
+                        "input_cache_write": "0.000025"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "OpenAI: GPT Sol Latest",
+            "id": "~openai/gpt-sol-latest",
+            "context_length": 1050000,
+            "input_modalities": [
+                "file",
+                "image",
+                "text"
+            ],
+            "output_modalities": [
+                "text"
+            ],
+            "reasoning": {
+                "mandatory": false,
+                "default_enabled": true,
+                "supported_efforts": [
+                    "max",
+                    "xhigh",
+                    "high",
+                    "medium",
+                    "low",
+                    "none"
+                ],
+                "default_effort": "medium"
+            },
+            "pricing": {
+                "prompt": "0.000002",
+                "completion": "0.00001",
+                "web_search": "0.01",
+                "input_cache_read": "0.0000002",
+                "input_cache_write": "0.0000025",
+                "overrides": [
+                    {
+                        "min_prompt_tokens": 272000,
+                        "prompt": "0.000004",
+                        "completion": "0.000015",
+                        "input_cache_read": "0.0000004",
+                        "input_cache_write": "0.000005"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "OpenAI: GPT Terra Latest",
+            "id": "~openai/gpt-terra-latest",
+            "context_length": 1050000,
+            "input_modalities": [
+                "file",
+                "image",
+                "text"
+            ],
+            "output_modalities": [
+                "text"
+            ],
+            "reasoning": {
+                "mandatory": false,
+                "default_enabled": true,
+                "supported_efforts": [
+                    "max",
+                    "xhigh",
+                    "high",
+                    "medium",
+                    "low",
+                    "none"
+                ],
+                "default_effort": "medium"
+            },
+            "pricing": {
+                "prompt": "0.000002",
+                "completion": "0.000012",
+                "web_search": "0.01",
+                "input_cache_read": "0.0000002",
+                "input_cache_write": "0.0000025",
+                "overrides": [
+                    {
+                        "min_prompt_tokens": 272000,
+                        "prompt": "0.000004",
+                        "completion": "0.000018",
+                        "input_cache_read": "0.0000004",
+                        "input_cache_write": "0.000005"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "OpenAI: GPT Luna Latest",
+            "id": "~openai/gpt-luna-latest",
+            "context_length": 1050000,
+            "input_modalities": [
+                "file",
+                "image",
+                "text"
+            ],
+            "output_modalities": [
+                "text"
+            ],
+            "reasoning": {
+                "mandatory": false,
+                "default_enabled": true,
+                "supported_efforts": [
+                    "max",
+                    "xhigh",
+                    "high",
+                    "medium",
+                    "low",
+                    "none"
+                ],
+                "default_effort": "medium"
+            },
+            "pricing": {
+                "prompt": "0.0000002",
+                "completion": "0.0000012",
+                "web_search": "0.01",
+                "input_cache_read": "0.00000002",
+                "input_cache_write": "0.00000025",
+                "overrides": [
+                    {
+                        "min_prompt_tokens": 272000,
+                        "prompt": "0.0000004",
+                        "completion": "0.0000018",
+                        "input_cache_read": "0.00000004",
+                        "input_cache_write": "0.0000005"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "OpenAI: GPT Mini Latest",
+            "id": "~openai/gpt-mini-latest",
+            "context_length": 400000,
+            "input_modalities": [
+                "file",
+                "image",
+                "text"
+            ],
+            "output_modalities": [
+                "text"
+            ],
+            "reasoning": {
+                "mandatory": false,
+                "default_enabled": false,
+                "supported_efforts": [
+                    "xhigh",
+                    "high",
+                    "medium",
+                    "low",
+                    "none"
+                ],
+                "default_effort": "medium"
+            },
+            "pricing": {
+                "prompt": "0.00000075",
+                "completion": "0.0000045",
+                "web_search": "0.01",
+                "input_cache_read": "0.000000075"
+            }
+        }
+    ],
+    "sakana": [
+        {
+            "name": "Sakana: Fugu Ultra v2",
+            "id": "sakana/fugu-ultra-v2",
+            "context_length": 1000000,
+            "input_modalities": [
+                "text",
+                "image",
+                "file"
+            ],
+            "output_modalities": [
+                "text"
+            ],
+            "reasoning": {
+                "mandatory": true,
+                "default_enabled": true,
+                "supported_efforts": [
+                    "max",
+                    "xhigh",
+                    "high"
+                ],
+                "default_effort": "xhigh"
+            },
+            "pricing": {
+                "prompt": "0.000005",
+                "completion": "0.00003",
+                "web_search": "0.01",
+                "input_cache_read": "0.0000005",
+                "overrides": [
+                    {
+                        "min_prompt_tokens": 272000,
+                        "prompt": "0.00001",
+                        "completion": "0.000045",
+                        "input_cache_read": "0.000001"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "Sakana: Fugu Max",
+            "id": "sakana/fugu-max",
+            "context_length": 1000000,
+            "input_modalities": [
+                "text",
+                "image",
+                "file"
+            ],
+            "output_modalities": [
+                "text"
+            ],
+            "reasoning": {
+                "mandatory": true,
+                "default_enabled": true,
+                "supported_efforts": [
+                    "max",
+                    "xhigh",
+                    "high"
+                ],
+                "default_effort": "high"
+            },
+            "pricing": {
+                "prompt": "0.000002",
+                "completion": "0.000006",
+                "web_search": "0.01",
+                "input_cache_read": "0.00000025"
+            }
+        },
+        {
+            "name": "Sakana: Sakana Namazu",
+            "id": "sakana/sakana-namazu",
+            "context_length": 262144,
+            "input_modalities": [
+                "text",
+                "image",
+                "file"
+            ],
+            "output_modalities": [
+                "text"
+            ],
+            "reasoning": {
+                "mandatory": false,
+                "default_enabled": true,
+                "supported_efforts": [
+                    "high",
+                    "none"
+                ],
+                "default_effort": "high"
+            },
+            "pricing": {
+                "prompt": "0.00000095",
+                "completion": "0.000004",
+                "web_search": "0.007",
+                "input_cache_read": "0.00000015"
+            }
+        },
+        {
+            "name": "Sakana: Fugu Ultra",
+            "id": "sakana/fugu-ultra",
+            "context_length": 1000000,
+            "input_modalities": [
+                "text",
+                "image"
+            ],
+            "output_modalities": [
+                "text"
+            ],
+            "reasoning": {
+                "mandatory": true,
+                "default_enabled": true,
+                "supported_efforts": [
+                    "max",
+                    "xhigh",
+                    "high"
+                ],
+                "default_effort": "xhigh"
+            },
+            "pricing": {
+                "prompt": "0.000005",
+                "completion": "0.00003",
+                "web_search": "0.01",
+                "input_cache_read": "0.0000005",
+                "overrides": [
+                    {
+                        "min_prompt_tokens": 272000,
+                        "prompt": "0.00001",
+                        "completion": "0.000045",
+                        "input_cache_read": "0.000001"
+                    }
+                ]
+            }
+        }
+    ],
+    "inclusionai": [
+        {
+            "name": "inclusionAI: Ling 3.0 Flash VL",
+            "id": "inclusionai/ling-3.0-flash-vl",
+            "context_length": 131072,
+            "input_modalities": [
+                "text",
+                "image",
+                "video"
+            ],
+            "output_modalities": [
+                "text"
+            ],
+            "reasoning": {
+                "mandatory": false,
+                "default_enabled": true
+            },
+            "pricing": {
+                "prompt": "0.00000006",
+                "completion": "0.00000018",
+                "input_cache_read": "0.000000012"
+            }
+        },
+        {
+            "name": "inclusionAI: Ling 3.0 Flash VL (free)",
+            "id": "inclusionai/ling-3.0-flash-vl:free",
+            "context_length": 262144,
+            "input_modalities": [
+                "text",
+                "image",
+                "video"
+            ],
+            "output_modalities": [
+                "text"
+            ],
+            "reasoning": {
+                "mandatory": false,
+                "default_enabled": true
+            },
+            "pricing": {
+                "prompt": "0",
+                "completion": "0"
+            }
+        },
+        {
+            "name": "inclusionAI: Ling 3.0 Flash Sante (free)",
+            "id": "inclusionai/ling-3.0-flash-sante:free",
+            "context_length": 262144,
+            "input_modalities": [
+                "text"
+            ],
+            "output_modalities": [
+                "text"
+            ],
+            "reasoning": {
+                "mandatory": false,
+                "default_enabled": true
+            },
+            "pricing": {
+                "prompt": "0",
+                "completion": "0"
+            }
+        },
+        {
+            "name": "inclusionAI: Ling 3.0 Flash Fin",
+            "id": "inclusionai/ling-3.0-flash-fin",
+            "context_length": 262144,
+            "input_modalities": [
+                "text"
+            ],
+            "output_modalities": [
+                "text"
+            ],
+            "reasoning": {
+                "mandatory": false,
+                "default_enabled": true
+            },
+            "pricing": {
+                "prompt": "0.00000006",
+                "completion": "0.00000018",
+                "input_cache_read": "0.000000012"
+            }
+        },
+        {
+            "name": "inclusionAI: Ling 3.0 Flash Fin (free)",
+            "id": "inclusionai/ling-3.0-flash-fin:free",
+            "context_length": 262144,
+            "input_modalities": [
+                "text"
+            ],
+            "output_modalities": [
+                "text"
+            ],
+            "reasoning": {
+                "mandatory": false,
+                "default_enabled": true
+            },
+            "pricing": {
+                "prompt": "0",
+                "completion": "0"
+            }
+        },
+        {
+            "name": "inclusionAI: Ling 3.0 Flash",
+            "id": "inclusionai/ling-3.0-flash",
+            "context_length": 262144,
+            "input_modalities": [
+                "text"
+            ],
+            "output_modalities": [
+                "text"
+            ],
+            "reasoning": {
+                "mandatory": false,
+                "default_enabled": true
+            },
+            "pricing": {
+                "prompt": "0.000000021",
+                "completion": "0.000000063",
+                "input_cache_read": "0.0000000042"
+            }
+        }
+    ],
+    "deepseek": [
+        {
+            "name": "DeepSeek: DeepSeek V4.1 Flash",
+            "id": "deepseek/deepseek-v4.1-flash",
+            "context_length": 1048576,
+            "input_modalities": [
+                "text",
+                "image"
+            ],
+            "output_modalities": [
+                "text"
+            ],
+            "reasoning": {
+                "mandatory": false,
+                "default_enabled": true,
+                "supported_efforts": [
+                    "max",
+                    "high",
+                    "low"
+                ],
+                "default_effort": "high"
+            },
+            "pricing": {
+                "prompt": "0.00000015",
+                "completion": "0.0000006",
+                "input_cache_read": "0.000000003",
+                "overrides": [
+                    {
+                        "utc_days": [
+                            "saturday",
+                            "sunday"
+                        ],
+                        "prompt": "0.00000015",
+                        "completion": "0.0000006",
+                        "input_cache_read": "0.000000003"
+                    },
+                    {
+                        "utc_days": [
+                            "monday",
+                            "tuesday",
+                            "wednesday",
+                            "thursday",
+                            "friday"
+                        ],
+                        "utc_start": 0,
+                        "utc_end": 100,
+                        "prompt": "0.00000015",
+                        "completion": "0.0000006",
+                        "input_cache_read": "0.000000003"
+                    },
+                    {
+                        "utc_days": [
+                            "monday",
+                            "tuesday",
+                            "wednesday",
+                            "thursday",
+                            "friday"
+                        ],
+                        "utc_start": 100,
+                        "utc_end": 400,
+                        "prompt": "0.0000003",
+                        "completion": "0.0000012",
+                        "input_cache_read": "0.000000006"
+                    },
+                    {
+                        "utc_days": [
+                            "monday",
+                            "tuesday",
+                            "wednesday",
+                            "thursday",
+                            "friday"
+                        ],
+                        "utc_start": 400,
+                        "utc_end": 600,
+                        "prompt": "0.00000015",
+                        "completion": "0.0000006",
+                        "input_cache_read": "0.000000003"
+                    },
+                    {
+                        "utc_days": [
+                            "monday",
+                            "tuesday",
+                            "wednesday",
+                            "thursday",
+                            "friday"
+                        ],
+                        "utc_start": 600,
+                        "utc_end": 1000,
+                        "prompt": "0.0000003",
+                        "completion": "0.0000012",
+                        "input_cache_read": "0.000000006"
+                    },
+                    {
+                        "utc_days": [
+                            "monday",
+                            "tuesday",
+                            "wednesday",
+                            "thursday",
+                            "friday"
+                        ],
+                        "utc_start": 1000,
+                        "utc_end": 0,
+                        "prompt": "0.00000015",
+                        "completion": "0.0000006",
+                        "input_cache_read": "0.000000003"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "DeepSeek: DeepSeek V4 Flash Vision Exp",
+            "id": "deepseek/deepseek-v4-flash-vision-exp",
+            "context_length": 1048576,
+            "input_modalities": [
+                "text",
+                "image"
+            ],
+            "output_modalities": [
+                "text"
+            ],
+            "reasoning": {
+                "mandatory": false,
+                "default_enabled": true,
+                "supported_efforts": [
+                    "max",
+                    "high",
+                    "low"
+                ],
+                "default_effort": "high"
+            },
+            "pricing": {
+                "prompt": "0.00000022",
+                "completion": "0.00000066",
+                "input_cache_read": "0.000000007"
+            }
+        },
+        {
+            "name": "DeepSeek: DeepSeek V4 Flash Vision Exp (batch)",
+            "id": "deepseek/deepseek-v4-flash-vision-exp:batch",
+            "context_length": 1048576,
+            "input_modalities": [
+                "text",
+                "image"
+            ],
+            "output_modalities": [
+                "text"
+            ],
+            "reasoning": {
+                "mandatory": false,
+                "default_enabled": true,
+                "supported_efforts": [
+                    "max",
+                    "high",
+                    "low"
+                ],
+                "default_effort": "high"
+            },
+            "pricing": {
+                "prompt": "0.00000011",
+                "completion": "0.00000033",
+                "input_cache_read": "0.0000000035"
+            }
+        },
+        {
+            "name": "DeepSeek: DeepSeek V4 Pro 0813",
+            "id": "deepseek/deepseek-v4-pro-0813",
+            "context_length": 1048576,
+            "input_modalities": [
+                "text"
+            ],
+            "output_modalities": [
+                "text"
+            ],
+            "reasoning": {
+                "mandatory": false,
+                "supported_efforts": [
+                    "max",
+                    "high",
+                    "low"
+                ],
+                "default_effort": "high"
+            },
+            "pricing": {
+                "prompt": "0.00000066",
+                "completion": "0.00000198",
+                "input_cache_read": "0.000000022",
+                "overrides": [
+                    {
+                        "utc_days": [
+                            "saturday",
+                            "sunday"
+                        ],
+                        "prompt": "0.00000066",
+                        "completion": "0.00000198",
+                        "input_cache_read": "0.000000022"
+                    },
+                    {
+                        "utc_days": [
+                            "monday",
+                            "tuesday",
+                            "wednesday",
+                            "thursday",
+                            "friday"
+                        ],
+                        "utc_start": 0,
+                        "utc_end": 100,
+                        "prompt": "0.00000066",
+                        "completion": "0.00000198",
+                        "input_cache_read": "0.000000022"
+                    },
+                    {
+                        "utc_days": [
+                            "monday",
+                            "tuesday",
+                            "wednesday",
+                            "thursday",
+                            "friday"
+                        ],
+                        "utc_start": 100,
+                        "utc_end": 400,
+                        "prompt": "0.00000132",
+                        "completion": "0.00000396",
+                        "input_cache_read": "0.000000044"
+                    },
+                    {
+                        "utc_days": [
+                            "monday",
+                            "tuesday",
+                            "wednesday",
+                            "thursday",
+                            "friday"
+                        ],
+                        "utc_start": 400,
+                        "utc_end": 600,
+                        "prompt": "0.00000066",
+                        "completion": "0.00000198",
+                        "input_cache_read": "0.000000022"
+                    },
+                    {
+                        "utc_days": [
+                            "monday",
+                            "tuesday",
+                            "wednesday",
+                            "thursday",
+                            "friday"
+                        ],
+                        "utc_start": 600,
+                        "utc_end": 1000,
+                        "prompt": "0.00000132",
+                        "completion": "0.00000396",
+                        "input_cache_read": "0.000000044"
+                    },
+                    {
+                        "utc_days": [
+                            "monday",
+                            "tuesday",
+                            "wednesday",
+                            "thursday",
+                            "friday"
+                        ],
+                        "utc_start": 1000,
+                        "utc_end": 0,
+                        "prompt": "0.00000066",
+                        "completion": "0.00000198",
+                        "input_cache_read": "0.000000022"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "DeepSeek: DeepSeek V4 Pro 0813 (batch)",
+            "id": "deepseek/deepseek-v4-pro-0813:batch",
+            "context_length": 1048576,
+            "input_modalities": [
+                "text"
+            ],
+            "output_modalities": [
+                "text"
+            ],
+            "reasoning": {
+                "mandatory": false,
+                "supported_efforts": [
+                    "max",
+                    "high",
+                    "low"
+                ],
+                "default_effort": "high"
+            },
+            "pricing": {
+                "prompt": "0.00000066",
+                "completion": "0.00000198",
+                "input_cache_read": "0.000000022"
+            }
+        },
+        {
+            "name": "DeepSeek: DeepSeek V4 Flash 0731",
+            "id": "deepseek/deepseek-v4-flash-0731",
+            "context_length": 1310720,
+            "input_modalities": [
+                "text"
+            ],
+            "output_modalities": [
+                "text"
+            ],
+            "reasoning": {
+                "mandatory": false,
+                "default_enabled": true,
+                "supported_efforts": [
+                    "max",
+                    "high",
+                    "low"
+                ],
+                "default_effort": "high"
+            },
+            "pricing": {
+                "prompt": "0.00000006",
+                "completion": "0.00000012",
+                "input_cache_read": "0.000000012"
+            }
+        },
+        {
+            "name": "DeepSeek: DeepSeek V4 Flash 0731 (batch)",
+            "id": "deepseek/deepseek-v4-flash-0731:batch",
+            "context_length": 1048576,
+            "input_modalities": [
+                "text"
+            ],
+            "output_modalities": [
+                "text"
+            ],
+            "reasoning": {
+                "mandatory": false,
+                "default_enabled": true,
+                "supported_efforts": [
+                    "max",
+                    "high",
+                    "low"
+                ],
+                "default_effort": "high"
+            },
+            "pricing": {
+                "prompt": "0.00000011",
+                "completion": "0.00000033",
+                "input_cache_read": "0.0000000035"
+            }
+        },
+        {
+            "name": "DeepSeek: DeepSeek V4 Pro 0423",
+            "id": "deepseek/deepseek-v4-pro",
+            "context_length": 1048576,
+            "input_modalities": [
+                "text"
+            ],
+            "output_modalities": [
+                "text"
+            ],
+            "reasoning": {
+                "mandatory": false,
+                "supported_efforts": [
+                    "xhigh",
+                    "high"
+                ],
+                "default_effort": "high"
+            },
+            "pricing": {
+                "prompt": "0.0000016",
+                "completion": "0.0000032",
+                "input_cache_read": "0.000000135"
+            }
+        },
+        {
+            "name": "DeepSeek: DeepSeek V4 Flash 0423",
+            "id": "deepseek/deepseek-v4-flash",
+            "context_length": 1048576,
+            "input_modalities": [
+                "text"
+            ],
+            "output_modalities": [
+                "text"
+            ],
+            "reasoning": {
+                "mandatory": false,
+                "supported_efforts": [
+                    "xhigh",
+                    "high"
+                ],
+                "default_effort": "high"
+            },
+            "pricing": {
+                "prompt": "0.000000088606",
+                "completion": "0.000000177212",
+                "input_cache_read": "0.0000000177212"
+            }
+        },
+        {
+            "name": "DeepSeek: DeepSeek V3.2",
+            "id": "deepseek/deepseek-v3.2",
+            "context_length": 163840,
+            "input_modalities": [
+                "text"
+            ],
+            "output_modalities": [
+                "text"
+            ],
+            "reasoning": {
+                "mandatory": false,
+                "default_enabled": false
+            },
+            "pricing": {
+                "prompt": "0.000000269",
+                "completion": "0.0000004",
+                "input_cache_read": "0.0000001345"
+            }
+        },
+        {
+            "name": "DeepSeek: DeepSeek V3.2 Exp",
+            "id": "deepseek/deepseek-v3.2-exp",
+            "context_length": 163840,
+            "input_modalities": [
+                "text"
+            ],
+            "output_modalities": [
+                "text"
+            ],
+            "reasoning": {
+                "mandatory": false
+            },
+            "pricing": {
+                "prompt": "0.00000027",
+                "completion": "0.00000041"
+            }
+        },
+        {
+            "name": "DeepSeek: DeepSeek V3.1 Terminus",
+            "id": "deepseek/deepseek-v3.1-terminus",
+            "context_length": 163840,
+            "input_modalities": [
+                "text"
+            ],
+            "output_modalities": [
+                "text"
+            ],
+            "reasoning": {
+                "mandatory": false
+            },
+            "pricing": {
+                "prompt": "0.00000027",
+                "completion": "0.000001",
+                "input_cache_read": "0.000000135"
+            }
+        },
+        {
+            "name": "DeepSeek: DeepSeek V3.1",
+            "id": "deepseek/deepseek-chat-v3.1",
+            "context_length": 163840,
+            "input_modalities": [
+                "text"
+            ],
+            "output_modalities": [
+                "text"
+            ],
+            "reasoning": {
+                "mandatory": false
+            },
+            "pricing": {
+                "prompt": "0.00000025",
+                "completion": "0.00000095",
+                "input_cache_read": "0.00000013"
+            }
+        },
+        {
+            "name": "DeepSeek: R1 0528",
+            "id": "deepseek/deepseek-r1-0528",
+            "context_length": 163840,
+            "input_modalities": [
+                "text"
+            ],
+            "output_modalities": [
+                "text"
+            ],
+            "reasoning": {
+                "mandatory": true
+            },
+            "pricing": {
+                "prompt": "0.0000005",
+                "completion": "0.00000215",
+                "input_cache_read": "0.00000035"
+            }
+        },
+        {
+            "name": "DeepSeek: DeepSeek V3 0324",
+            "id": "deepseek/deepseek-chat-v3-0324",
+            "context_length": 163840,
+            "input_modalities": [
+                "text"
+            ],
+            "output_modalities": [
+                "text"
+            ],
+            "reasoning": null,
+            "pricing": {
+                "prompt": "0.00000025",
+                "completion": "0.000001"
+            }
+        },
+        {
+            "name": "DeepSeek: R1 Distill Llama 70B",
+            "id": "deepseek/deepseek-r1-distill-llama-70b",
+            "context_length": 8192,
+            "input_modalities": [
+                "text"
+            ],
+            "output_modalities": [
+                "text"
+            ],
+            "reasoning": {
+                "mandatory": false
+            },
+            "pricing": {
+                "prompt": "0.0000008",
+                "completion": "0.0000008"
+            }
+        },
+        {
+            "name": "DeepSeek: R1",
+            "id": "deepseek/deepseek-r1",
+            "context_length": 64000,
+            "input_modalities": [
+                "text"
+            ],
+            "output_modalities": [
+                "text"
+            ],
+            "reasoning": {
+                "mandatory": true
+            },
+            "pricing": {
+                "prompt": "0.0000007",
+                "completion": "0.0000025"
+            }
+        },
+        {
+            "name": "DeepSeek: DeepSeek V3",
+            "id": "deepseek/deepseek-chat",
+            "context_length": 163840,
+            "input_modalities": [
+                "text"
+            ],
+            "output_modalities": [
+                "text"
+            ],
+            "reasoning": null,
+            "pricing": {
+                "prompt": "0.0000002574",
+                "completion": "0.0000010287"
+            }
+        }
+    ],
     "inception": [
         {
             "name": "Inception: Mercury 2.5",
@@ -1976,30 +3205,6 @@
             }
         },
         {
-            "name": "OpenAI: gpt-oss-20b (batch)",
-            "id": "openai/gpt-oss-20b:batch",
-            "context_length": 131072,
-            "input_modalities": [
-                "text"
-            ],
-            "output_modalities": [
-                "text"
-            ],
-            "reasoning": {
-                "mandatory": true,
-                "supported_efforts": [
-                    "high",
-                    "medium",
-                    "low"
-                ],
-                "default_effort": "medium"
-            },
-            "pricing": {
-                "prompt": "0.00000005",
-                "completion": "0.0000002"
-            }
-        },
-        {
             "name": "OpenAI: o3 Pro",
             "id": "openai/o3-pro",
             "context_length": 200000,
@@ -2569,22 +3774,6 @@
             }
         },
         {
-            "name": "OpenAI: GPT-4 Turbo Preview",
-            "id": "openai/gpt-4-turbo-preview",
-            "context_length": 128000,
-            "input_modalities": [
-                "text"
-            ],
-            "output_modalities": [
-                "text"
-            ],
-            "reasoning": null,
-            "pricing": {
-                "prompt": "0.00001",
-                "completion": "0.00003"
-            }
-        },
-        {
             "name": "OpenAI: GPT-3.5 Turbo Instruct",
             "id": "openai/gpt-3.5-turbo-instruct",
             "context_length": 4095,
@@ -2663,86 +3852,6 @@
             "pricing": {
                 "prompt": "0.00003",
                 "completion": "0.00006"
-            }
-        }
-    ],
-    "inclusionai": [
-        {
-            "name": "inclusionAI: Ling 3.0 Flash Sante (free)",
-            "id": "inclusionai/ling-3.0-flash-sante:free",
-            "context_length": 262144,
-            "input_modalities": [
-                "text"
-            ],
-            "output_modalities": [
-                "text"
-            ],
-            "reasoning": {
-                "mandatory": false,
-                "default_enabled": true
-            },
-            "pricing": {
-                "prompt": "0",
-                "completion": "0"
-            }
-        },
-        {
-            "name": "inclusionAI: Ling 3.0 Flash Fin",
-            "id": "inclusionai/ling-3.0-flash-fin",
-            "context_length": 262144,
-            "input_modalities": [
-                "text"
-            ],
-            "output_modalities": [
-                "text"
-            ],
-            "reasoning": {
-                "mandatory": false,
-                "default_enabled": true
-            },
-            "pricing": {
-                "prompt": "0.00000006",
-                "completion": "0.00000018",
-                "input_cache_read": "0.000000012"
-            }
-        },
-        {
-            "name": "inclusionAI: Ling 3.0 Flash Fin (free)",
-            "id": "inclusionai/ling-3.0-flash-fin:free",
-            "context_length": 262144,
-            "input_modalities": [
-                "text"
-            ],
-            "output_modalities": [
-                "text"
-            ],
-            "reasoning": {
-                "mandatory": false,
-                "default_enabled": true
-            },
-            "pricing": {
-                "prompt": "0",
-                "completion": "0"
-            }
-        },
-        {
-            "name": "inclusionAI: Ling 3.0 Flash",
-            "id": "inclusionai/ling-3.0-flash",
-            "context_length": 262144,
-            "input_modalities": [
-                "text"
-            ],
-            "output_modalities": [
-                "text"
-            ],
-            "reasoning": {
-                "mandatory": false,
-                "default_enabled": true
-            },
-            "pricing": {
-                "prompt": "0.000000021",
-                "completion": "0.000000063",
-                "input_cache_read": "0.0000000042"
             }
         }
     ],
@@ -2825,9 +3934,9 @@
                 "default_effort": "xhigh"
             },
             "pricing": {
-                "prompt": "0.00000042",
-                "completion": "0.000003",
-                "input_cache_read": "0.000000085"
+                "prompt": "0.000000214",
+                "completion": "0.00000255",
+                "input_cache_read": "0.00000015"
             }
         },
         {
@@ -3189,9 +4298,8 @@
                 "mandatory": false
             },
             "pricing": {
-                "prompt": "0.0000003125",
-                "completion": "0.00000125",
-                "input_cache_read": "0.00000015625"
+                "prompt": "0.0000001625",
+                "completion": "0.0000013"
             }
         },
         {
@@ -3230,8 +4338,8 @@
                 "mandatory": false
             },
             "pricing": {
-                "prompt": "0.00000029",
-                "completion": "0.0000024"
+                "prompt": "0.00000026",
+                "completion": "0.00000208"
             }
         },
         {
@@ -3434,8 +4542,8 @@
             ],
             "reasoning": null,
             "pricing": {
-                "prompt": "0.00000015",
-                "completion": "0.0000006"
+                "prompt": "0.00000013",
+                "completion": "0.00000052"
             }
         },
         {
@@ -3521,9 +4629,7 @@
             "output_modalities": [
                 "text"
             ],
-            "reasoning": {
-                "mandatory": false
-            },
+            "reasoning": null,
             "pricing": {
                 "prompt": "0.00000065",
                 "completion": "0.00000325",
@@ -3737,8 +4843,9 @@
             ],
             "reasoning": null,
             "pricing": {
-                "prompt": "0.00000022",
-                "completion": "0.00000088"
+                "prompt": "0.0000000875",
+                "completion": "0.00000035",
+                "input_cache_read": "0.0000000175"
             }
         },
         {
@@ -3793,8 +4900,8 @@
                 "mandatory": false
             },
             "pricing": {
-                "prompt": "0.0000002275",
-                "completion": "0.00000091"
+                "prompt": "0.00000012",
+                "completion": "0.00000024"
             }
         },
         {
@@ -4684,8 +5791,9 @@
                 "default_enabled": false
             },
             "pricing": {
-                "prompt": "0.00000007",
-                "completion": "0.00000034"
+                "prompt": "0.00000009",
+                "completion": "0.0000003",
+                "input_cache_read": "0.00000005"
             }
         },
         {
@@ -4729,27 +5837,6 @@
                 "prompt": "0.00000009",
                 "completion": "0.00000034",
                 "input_cache_read": "0.00000005"
-            }
-        },
-        {
-            "name": "Google: Gemma 4 31B (batch)",
-            "id": "google/gemma-4-31b-it:batch",
-            "context_length": 262144,
-            "input_modalities": [
-                "image",
-                "text",
-                "video"
-            ],
-            "output_modalities": [
-                "text"
-            ],
-            "reasoning": {
-                "mandatory": false,
-                "default_enabled": false
-            },
-            "pricing": {
-                "prompt": "0.00000039",
-                "completion": "0.00000097"
             }
         },
         {
@@ -5357,45 +6444,6 @@
             }
         },
         {
-            "name": "Google: Gemini 2.5 Pro Preview 05-06",
-            "id": "google/gemini-2.5-pro-preview-05-06",
-            "context_length": 1048576,
-            "input_modalities": [
-                "text",
-                "image",
-                "file",
-                "audio",
-                "video"
-            ],
-            "output_modalities": [
-                "text"
-            ],
-            "reasoning": {
-                "mandatory": true
-            },
-            "pricing": {
-                "prompt": "0.00000125",
-                "completion": "0.00001",
-                "image": "0.00000125",
-                "audio": "0.00000125",
-                "input_audio_cache": "0.000000125",
-                "web_search": "0.014",
-                "internal_reasoning": "0.00001",
-                "input_cache_read": "0.000000125",
-                "input_cache_write": "0.000000375",
-                "overrides": [
-                    {
-                        "min_prompt_tokens": 200000,
-                        "prompt": "0.0000025",
-                        "completion": "0.000015",
-                        "audio": "0.0000025",
-                        "input_audio_cache": "0.00000025",
-                        "input_cache_read": "0.00000025"
-                    }
-                ]
-            }
-        },
-        {
             "name": "Google: Gemma 3 4B",
             "id": "google/gemma-3-4b-it",
             "context_length": 131072,
@@ -5530,7 +6578,7 @@
             }
         },
         {
-            "name": "Claude Opus 5",
+            "name": "Anthropic: Claude Opus 5",
             "id": "anthropic/claude-opus-5",
             "context_length": 1000000,
             "input_modalities": [
@@ -5563,7 +6611,7 @@
             }
         },
         {
-            "name": "Claude Opus 5 (batch)",
+            "name": "Anthropic: Claude Opus 5 (batch)",
             "id": "anthropic/claude-opus-5:batch",
             "context_length": 1000000,
             "input_modalities": [
@@ -6417,9 +7465,9 @@
                 "default_effort": "high"
             },
             "pricing": {
-                "prompt": "0.0000000825",
-                "completion": "0.00000033",
-                "input_cache_read": "0.000000020625",
+                "prompt": "0.000000132",
+                "completion": "0.000000528",
+                "input_cache_read": "0.000000033",
                 "overrides": [
                     {
                         "utc_start": 0,
@@ -6515,7 +7563,7 @@
         {
             "name": "Z.ai: GLM Latest",
             "id": "~z-ai/glm-latest",
-            "context_length": 1048576,
+            "context_length": 1310720,
             "input_modalities": [
                 "text"
             ],
@@ -6533,9 +7581,9 @@
                 "default_effort": "max"
             },
             "pricing": {
-                "prompt": "0.000001113",
-                "completion": "0.000003498",
-                "input_cache_read": "0.0000002067"
+                "prompt": "0.0000008775",
+                "completion": "0.00000297",
+                "input_cache_read": "0.0000001755"
             }
         }
     ],
@@ -6563,9 +7611,9 @@
                 "default_effort": "max"
             },
             "pricing": {
-                "prompt": "0.000000075",
-                "completion": "0.00000025",
-                "input_cache_read": "0.000000015"
+                "prompt": "0.00000009",
+                "completion": "0.0000003",
+                "input_cache_read": "0.000000018"
             }
         },
         {
@@ -6599,7 +7647,7 @@
         {
             "name": "Z.ai: GLM 5.3",
             "id": "z-ai/glm-5.3",
-            "context_length": 1048576,
+            "context_length": 1310720,
             "input_modalities": [
                 "text"
             ],
@@ -6668,9 +7716,9 @@
                 "default_effort": "high"
             },
             "pricing": {
-                "prompt": "0.00000028",
-                "completion": "0.00000088",
-                "input_cache_read": "0.000000052"
+                "prompt": "0.0000014",
+                "completion": "0.0000044",
+                "input_cache_read": "0.00000014"
             }
         },
         {
@@ -6696,6 +7744,30 @@
                 "prompt": "0.0000007",
                 "completion": "0.0000022",
                 "input_cache_read": "0.00000007"
+            }
+        },
+        {
+            "name": "Z.ai: GLM 5.2 (free)",
+            "id": "z-ai/glm-5.2:free",
+            "context_length": 32768,
+            "input_modalities": [
+                "text"
+            ],
+            "output_modalities": [
+                "text"
+            ],
+            "reasoning": {
+                "mandatory": false,
+                "default_enabled": true,
+                "supported_efforts": [
+                    "xhigh",
+                    "high"
+                ],
+                "default_effort": "high"
+            },
+            "pricing": {
+                "prompt": "0",
+                "completion": "0"
             }
         },
         {
@@ -6783,7 +7855,7 @@
         {
             "name": "Z.ai: GLM 4.7 Flash",
             "id": "z-ai/glm-4.7-flash",
-            "context_length": 202752,
+            "context_length": 200000,
             "input_modalities": [
                 "text"
             ],
@@ -6854,9 +7926,9 @@
                 "mandatory": false
             },
             "pricing": {
-                "prompt": "0.00000043",
-                "completion": "0.00000175",
-                "input_cache_read": "0.00000008"
+                "prompt": "0.0000005",
+                "completion": "0.000002",
+                "input_cache_read": "0.0000001"
             }
         },
         {
@@ -6915,376 +7987,6 @@
                 "prompt": "0.00000013",
                 "completion": "0.00000085",
                 "input_cache_read": "0.000000025"
-            }
-        }
-    ],
-    "deepseek": [
-        {
-            "name": "DeepSeek: DeepSeek V4 Flash Vision Exp",
-            "id": "deepseek/deepseek-v4-flash-vision-exp",
-            "context_length": 1048576,
-            "input_modalities": [
-                "text",
-                "image"
-            ],
-            "output_modalities": [
-                "text"
-            ],
-            "reasoning": {
-                "mandatory": false,
-                "default_enabled": true,
-                "supported_efforts": [
-                    "max",
-                    "high",
-                    "low"
-                ],
-                "default_effort": "high"
-            },
-            "pricing": {
-                "prompt": "0.00000022",
-                "completion": "0.00000066",
-                "input_cache_read": "0.000000007"
-            }
-        },
-        {
-            "name": "DeepSeek: DeepSeek V4 Flash Vision Exp (batch)",
-            "id": "deepseek/deepseek-v4-flash-vision-exp:batch",
-            "context_length": 1048576,
-            "input_modalities": [
-                "text",
-                "image"
-            ],
-            "output_modalities": [
-                "text"
-            ],
-            "reasoning": {
-                "mandatory": false,
-                "default_enabled": true,
-                "supported_efforts": [
-                    "max",
-                    "high",
-                    "low"
-                ],
-                "default_effort": "high"
-            },
-            "pricing": {
-                "prompt": "0.00000011",
-                "completion": "0.00000033",
-                "input_cache_read": "0.0000000035"
-            }
-        },
-        {
-            "name": "DeepSeek: DeepSeek V4 Pro 0813",
-            "id": "deepseek/deepseek-v4-pro-0813",
-            "context_length": 1048576,
-            "input_modalities": [
-                "text"
-            ],
-            "output_modalities": [
-                "text"
-            ],
-            "reasoning": {
-                "mandatory": false,
-                "supported_efforts": [
-                    "max",
-                    "high",
-                    "low"
-                ],
-                "default_effort": "high"
-            },
-            "pricing": {
-                "prompt": "0.00000057948",
-                "completion": "0.00000173844",
-                "input_cache_read": "0.000000018438"
-            }
-        },
-        {
-            "name": "DeepSeek: DeepSeek V4 Pro 0813 (batch)",
-            "id": "deepseek/deepseek-v4-pro-0813:batch",
-            "context_length": 1048576,
-            "input_modalities": [
-                "text"
-            ],
-            "output_modalities": [
-                "text"
-            ],
-            "reasoning": {
-                "mandatory": false,
-                "supported_efforts": [
-                    "max",
-                    "high",
-                    "low"
-                ],
-                "default_effort": "high"
-            },
-            "pricing": {
-                "prompt": "0.00000066",
-                "completion": "0.00000198",
-                "input_cache_read": "0.000000022"
-            }
-        },
-        {
-            "name": "DeepSeek: DeepSeek V4 Flash 0731",
-            "id": "deepseek/deepseek-v4-flash-0731",
-            "context_length": 1310720,
-            "input_modalities": [
-                "text"
-            ],
-            "output_modalities": [
-                "text"
-            ],
-            "reasoning": {
-                "mandatory": false,
-                "default_enabled": true,
-                "supported_efforts": [
-                    "max",
-                    "high",
-                    "low"
-                ],
-                "default_effort": "high"
-            },
-            "pricing": {
-                "prompt": "0.000000065",
-                "completion": "0.00000018",
-                "input_cache_read": "0.000000016"
-            }
-        },
-        {
-            "name": "DeepSeek: DeepSeek V4 Flash 0731 (batch)",
-            "id": "deepseek/deepseek-v4-flash-0731:batch",
-            "context_length": 1048576,
-            "input_modalities": [
-                "text"
-            ],
-            "output_modalities": [
-                "text"
-            ],
-            "reasoning": {
-                "mandatory": false,
-                "default_enabled": true,
-                "supported_efforts": [
-                    "max",
-                    "high",
-                    "low"
-                ],
-                "default_effort": "high"
-            },
-            "pricing": {
-                "prompt": "0.00000011",
-                "completion": "0.00000033",
-                "input_cache_read": "0.0000000035"
-            }
-        },
-        {
-            "name": "DeepSeek: DeepSeek V4 Pro 0423",
-            "id": "deepseek/deepseek-v4-pro",
-            "context_length": 1048576,
-            "input_modalities": [
-                "text"
-            ],
-            "output_modalities": [
-                "text"
-            ],
-            "reasoning": {
-                "mandatory": false,
-                "supported_efforts": [
-                    "xhigh",
-                    "high"
-                ],
-                "default_effort": "high"
-            },
-            "pricing": {
-                "prompt": "0.00000087",
-                "completion": "0.00000174",
-                "input_cache_read": "0.0000000725"
-            }
-        },
-        {
-            "name": "DeepSeek: DeepSeek V4 Flash 0423",
-            "id": "deepseek/deepseek-v4-flash",
-            "context_length": 1048576,
-            "input_modalities": [
-                "text"
-            ],
-            "output_modalities": [
-                "text"
-            ],
-            "reasoning": {
-                "mandatory": false,
-                "supported_efforts": [
-                    "xhigh",
-                    "high"
-                ],
-                "default_effort": "high"
-            },
-            "pricing": {
-                "prompt": "0.000000084",
-                "completion": "0.000000168",
-                "input_cache_read": "0.0000000168"
-            }
-        },
-        {
-            "name": "DeepSeek: DeepSeek V3.2",
-            "id": "deepseek/deepseek-v3.2",
-            "context_length": 163840,
-            "input_modalities": [
-                "text"
-            ],
-            "output_modalities": [
-                "text"
-            ],
-            "reasoning": {
-                "mandatory": false,
-                "default_enabled": false
-            },
-            "pricing": {
-                "prompt": "0.000000269",
-                "completion": "0.0000004",
-                "input_cache_read": "0.0000001345"
-            }
-        },
-        {
-            "name": "DeepSeek: DeepSeek V3.2 Exp",
-            "id": "deepseek/deepseek-v3.2-exp",
-            "context_length": 163840,
-            "input_modalities": [
-                "text"
-            ],
-            "output_modalities": [
-                "text"
-            ],
-            "reasoning": {
-                "mandatory": false
-            },
-            "pricing": {
-                "prompt": "0.00000027",
-                "completion": "0.00000041"
-            }
-        },
-        {
-            "name": "DeepSeek: DeepSeek V3.1 Terminus",
-            "id": "deepseek/deepseek-v3.1-terminus",
-            "context_length": 163840,
-            "input_modalities": [
-                "text"
-            ],
-            "output_modalities": [
-                "text"
-            ],
-            "reasoning": {
-                "mandatory": false
-            },
-            "pricing": {
-                "prompt": "0.00000027",
-                "completion": "0.000001",
-                "input_cache_read": "0.000000135"
-            }
-        },
-        {
-            "name": "DeepSeek: DeepSeek V3.1",
-            "id": "deepseek/deepseek-chat-v3.1",
-            "context_length": 163840,
-            "input_modalities": [
-                "text"
-            ],
-            "output_modalities": [
-                "text"
-            ],
-            "reasoning": {
-                "mandatory": false
-            },
-            "pricing": {
-                "prompt": "0.00000025",
-                "completion": "0.00000095",
-                "input_cache_read": "0.00000013"
-            }
-        },
-        {
-            "name": "DeepSeek: R1 0528",
-            "id": "deepseek/deepseek-r1-0528",
-            "context_length": 163840,
-            "input_modalities": [
-                "text"
-            ],
-            "output_modalities": [
-                "text"
-            ],
-            "reasoning": {
-                "mandatory": true
-            },
-            "pricing": {
-                "prompt": "0.0000005",
-                "completion": "0.00000215",
-                "input_cache_read": "0.00000035"
-            }
-        },
-        {
-            "name": "DeepSeek: DeepSeek V3 0324",
-            "id": "deepseek/deepseek-chat-v3-0324",
-            "context_length": 163840,
-            "input_modalities": [
-                "text"
-            ],
-            "output_modalities": [
-                "text"
-            ],
-            "reasoning": null,
-            "pricing": {
-                "prompt": "0.00000029",
-                "completion": "0.00000114",
-                "input_cache_read": "0.00000011"
-            }
-        },
-        {
-            "name": "DeepSeek: R1 Distill Llama 70B",
-            "id": "deepseek/deepseek-r1-distill-llama-70b",
-            "context_length": 8192,
-            "input_modalities": [
-                "text"
-            ],
-            "output_modalities": [
-                "text"
-            ],
-            "reasoning": {
-                "mandatory": false
-            },
-            "pricing": {
-                "prompt": "0.0000008",
-                "completion": "0.0000008"
-            }
-        },
-        {
-            "name": "DeepSeek: R1",
-            "id": "deepseek/deepseek-r1",
-            "context_length": 64000,
-            "input_modalities": [
-                "text"
-            ],
-            "output_modalities": [
-                "text"
-            ],
-            "reasoning": {
-                "mandatory": true
-            },
-            "pricing": {
-                "prompt": "0.0000007",
-                "completion": "0.0000025"
-            }
-        },
-        {
-            "name": "DeepSeek: DeepSeek V3",
-            "id": "deepseek/deepseek-chat",
-            "context_length": 163840,
-            "input_modalities": [
-                "text"
-            ],
-            "output_modalities": [
-                "text"
-            ],
-            "reasoning": null,
-            "pricing": {
-                "prompt": "0.00000032",
-                "completion": "0.00000089"
             }
         }
     ],
@@ -7931,8 +8633,8 @@
                 "default_effort": "medium"
             },
             "pricing": {
-                "prompt": "0.000000085",
-                "completion": "0.0000004"
+                "prompt": "0.00000008",
+                "completion": "0.00000045"
             }
         },
         {
@@ -7974,75 +8676,8 @@
                 "mandatory": false
             },
             "pricing": {
-                "prompt": "0.00000005",
-                "completion": "0.0000002",
-                "input_cache_read": "0.00000003"
-            }
-        }
-    ],
-    "sakana": [
-        {
-            "name": "Sakana: Sakana Namazu",
-            "id": "sakana/sakana-namazu",
-            "context_length": 262144,
-            "input_modalities": [
-                "text",
-                "image",
-                "file"
-            ],
-            "output_modalities": [
-                "text"
-            ],
-            "reasoning": {
-                "mandatory": false,
-                "default_enabled": true,
-                "supported_efforts": [
-                    "high",
-                    "none"
-                ],
-                "default_effort": "high"
-            },
-            "pricing": {
-                "prompt": "0.00000095",
-                "completion": "0.000004",
-                "web_search": "0.007",
-                "input_cache_read": "0.00000015"
-            }
-        },
-        {
-            "name": "Sakana: Fugu Ultra",
-            "id": "sakana/fugu-ultra",
-            "context_length": 1000000,
-            "input_modalities": [
-                "text",
-                "image"
-            ],
-            "output_modalities": [
-                "text"
-            ],
-            "reasoning": {
-                "mandatory": true,
-                "default_enabled": true,
-                "supported_efforts": [
-                    "max",
-                    "xhigh",
-                    "high"
-                ],
-                "default_effort": "xhigh"
-            },
-            "pricing": {
-                "prompt": "0.000005",
-                "completion": "0.00003",
-                "web_search": "0.01",
-                "input_cache_read": "0.0000005",
-                "overrides": [
-                    {
-                        "min_prompt_tokens": 272000,
-                        "prompt": "0.00001",
-                        "completion": "0.000045",
-                        "input_cache_read": "0.000001"
-                    }
-                ]
+                "prompt": "0.00000006",
+                "completion": "0.00000024"
             }
         }
     ],
@@ -8061,9 +8696,9 @@
                 "mandatory": false
             },
             "pricing": {
-                "prompt": "0.00000003",
-                "completion": "0.00000012",
-                "input_cache_read": "0.000000006"
+                "prompt": "0.00000009",
+                "completion": "0.00000036",
+                "input_cache_read": "0.000000018"
             }
         },
         {
@@ -8083,34 +8718,6 @@
                 "prompt": "0.00000015",
                 "completion": "0.0000006",
                 "input_cache_read": "0.000000015"
-            }
-        }
-    ],
-    "~deepseek": [
-        {
-            "name": "DeepSeek V4 Flash Latest",
-            "id": "~deepseek/deepseek-v4-flash-latest",
-            "context_length": 1310720,
-            "input_modalities": [
-                "text"
-            ],
-            "output_modalities": [
-                "text"
-            ],
-            "reasoning": {
-                "mandatory": false,
-                "default_enabled": true,
-                "supported_efforts": [
-                    "max",
-                    "high",
-                    "low"
-                ],
-                "default_effort": "high"
-            },
-            "pricing": {
-                "prompt": "0.00000005",
-                "completion": "0.00000016",
-                "input_cache_read": "0.000000013"
             }
         }
     ],
@@ -8142,37 +8749,6 @@
             },
             "pricing": {
                 "prompt": "0.00000045",
-                "completion": "0.0000012",
-                "input_cache_read": "0.0000001"
-            }
-        },
-        {
-            "name": "Thinking Machines: Inkling Small (batch)",
-            "id": "thinkingmachines/inkling-small:batch",
-            "context_length": 524288,
-            "input_modalities": [
-                "text",
-                "image",
-                "audio"
-            ],
-            "output_modalities": [
-                "text"
-            ],
-            "reasoning": {
-                "mandatory": false,
-                "default_enabled": true,
-                "supported_efforts": [
-                    "max",
-                    "high",
-                    "medium",
-                    "low",
-                    "minimal",
-                    "none"
-                ],
-                "default_effort": "high"
-            },
-            "pricing": {
-                "prompt": "0.0000005",
                 "completion": "0.0000012",
                 "input_cache_read": "0.0000001"
             }
@@ -8585,9 +9161,9 @@
                 "default_enabled": true
             },
             "pricing": {
-                "prompt": "0.00000071",
-                "completion": "0.0000035",
-                "input_cache_read": "0.00000015"
+                "prompt": "0.0000007062",
+                "completion": "0.00000321",
+                "input_cache_read": "0.00000018"
             }
         },
         {
@@ -8648,7 +9224,8 @@
             },
             "pricing": {
                 "prompt": "0.0000006",
-                "completion": "0.0000025"
+                "completion": "0.0000025",
+                "input_cache_read": "0.00000015"
             }
         },
         {
@@ -8953,7 +9530,7 @@
             }
         },
         {
-            "name": "Anthropic Claude Haiku Latest",
+            "name": "Anthropic: Claude Haiku Latest",
             "id": "~anthropic/claude-haiku-latest",
             "context_length": 200000,
             "input_modalities": [
@@ -8977,7 +9554,7 @@
             }
         },
         {
-            "name": "Anthropic Claude Sonnet Latest",
+            "name": "Anthropic: Claude Sonnet Latest",
             "id": "~anthropic/claude-sonnet-latest",
             "context_length": 1000000,
             "input_modalities": [
@@ -9192,7 +9769,7 @@
                 "mandatory": false
             },
             "pricing": {
-                "prompt": "0.00000055",
+                "prompt": "0.0000004",
                 "completion": "0.0000022"
             }
         },
@@ -9361,6 +9938,32 @@
             }
         },
         {
+            "name": "Mistral: Mistral Small 4 (batch)",
+            "id": "mistralai/mistral-small-2603:batch",
+            "context_length": 262144,
+            "input_modalities": [
+                "text",
+                "image"
+            ],
+            "output_modalities": [
+                "text"
+            ],
+            "reasoning": {
+                "mandatory": false,
+                "default_enabled": false,
+                "supported_efforts": [
+                    "high",
+                    "none"
+                ],
+                "default_effort": "high"
+            },
+            "pricing": {
+                "prompt": "0.000000075",
+                "completion": "0.0000003",
+                "input_cache_read": "0.0000000075"
+            }
+        },
+        {
             "name": "Mistral: Devstral 2 2512",
             "id": "mistralai/devstral-2512",
             "context_length": 262144,
@@ -9415,6 +10018,24 @@
             }
         },
         {
+            "name": "Mistral: Ministral 3 8B 2512 (batch)",
+            "id": "mistralai/ministral-8b-2512:batch",
+            "context_length": 262144,
+            "input_modalities": [
+                "text",
+                "image"
+            ],
+            "output_modalities": [
+                "text"
+            ],
+            "reasoning": null,
+            "pricing": {
+                "prompt": "0.000000075",
+                "completion": "0.000000075",
+                "input_cache_read": "0.0000000075"
+            }
+        },
+        {
             "name": "Mistral: Ministral 3 3B 2512",
             "id": "mistralai/ministral-3b-2512",
             "context_length": 131072,
@@ -9449,6 +10070,25 @@
                 "prompt": "0.0000005",
                 "completion": "0.0000015",
                 "input_cache_read": "0.00000005"
+            }
+        },
+        {
+            "name": "Mistral: Mistral Large 3 2512 (batch)",
+            "id": "mistralai/mistral-large-2512:batch",
+            "context_length": 262144,
+            "input_modalities": [
+                "text",
+                "image",
+                "file"
+            ],
+            "output_modalities": [
+                "text"
+            ],
+            "reasoning": null,
+            "pricing": {
+                "prompt": "0.00000025",
+                "completion": "0.00000075",
+                "input_cache_read": "0.000000025"
             }
         },
         {
@@ -9491,6 +10131,25 @@
             }
         },
         {
+            "name": "Mistral: Mistral Medium 3.1 (batch)",
+            "id": "mistralai/mistral-medium-3.1:batch",
+            "context_length": 131072,
+            "input_modalities": [
+                "text",
+                "image",
+                "file"
+            ],
+            "output_modalities": [
+                "text"
+            ],
+            "reasoning": null,
+            "pricing": {
+                "prompt": "0.0000002",
+                "completion": "0.000001",
+                "input_cache_read": "0.00000002"
+            }
+        },
+        {
             "name": "Mistral: Codestral 2508",
             "id": "mistralai/codestral-2508",
             "context_length": 256000,
@@ -9509,9 +10168,27 @@
             }
         },
         {
+            "name": "Mistral: Codestral 2508 (batch)",
+            "id": "mistralai/codestral-2508:batch",
+            "context_length": 256000,
+            "input_modalities": [
+                "text",
+                "file"
+            ],
+            "output_modalities": [
+                "text"
+            ],
+            "reasoning": null,
+            "pricing": {
+                "prompt": "0.00000015",
+                "completion": "0.00000045",
+                "input_cache_read": "0.000000015"
+            }
+        },
+        {
             "name": "Mistral: Mistral Small 3.2 24B",
             "id": "mistralai/mistral-small-3.2-24b-instruct",
-            "context_length": 131072,
+            "context_length": 256000,
             "input_modalities": [
                 "image",
                 "text"
@@ -9521,8 +10198,8 @@
             ],
             "reasoning": null,
             "pricing": {
-                "prompt": "0.000000075",
-                "completion": "0.0000002"
+                "prompt": "0.00000009375",
+                "completion": "0.00000025"
             }
         },
         {
@@ -9666,84 +10343,9 @@
             }
         }
     ],
-    "~openai": [
-        {
-            "name": "OpenAI GPT Mini Latest",
-            "id": "~openai/gpt-mini-latest",
-            "context_length": 400000,
-            "input_modalities": [
-                "file",
-                "image",
-                "text"
-            ],
-            "output_modalities": [
-                "text"
-            ],
-            "reasoning": {
-                "mandatory": false,
-                "default_enabled": false,
-                "supported_efforts": [
-                    "xhigh",
-                    "high",
-                    "medium",
-                    "low",
-                    "none"
-                ],
-                "default_effort": "medium"
-            },
-            "pricing": {
-                "prompt": "0.00000075",
-                "completion": "0.0000045",
-                "web_search": "0.01",
-                "input_cache_read": "0.000000075"
-            }
-        },
-        {
-            "name": "OpenAI GPT Latest",
-            "id": "~openai/gpt-latest",
-            "context_length": 1050000,
-            "input_modalities": [
-                "file",
-                "image",
-                "text"
-            ],
-            "output_modalities": [
-                "text"
-            ],
-            "reasoning": {
-                "mandatory": false,
-                "default_enabled": true,
-                "supported_efforts": [
-                    "max",
-                    "xhigh",
-                    "high",
-                    "medium",
-                    "low",
-                    "none"
-                ],
-                "default_effort": "medium"
-            },
-            "pricing": {
-                "prompt": "0.000002",
-                "completion": "0.00001",
-                "web_search": "0.01",
-                "input_cache_read": "0.0000002",
-                "input_cache_write": "0.0000025",
-                "overrides": [
-                    {
-                        "min_prompt_tokens": 272000,
-                        "prompt": "0.000004",
-                        "completion": "0.000015",
-                        "input_cache_read": "0.0000004",
-                        "input_cache_write": "0.000005"
-                    }
-                ]
-            }
-        }
-    ],
     "~google": [
         {
-            "name": "Google Gemini Pro Latest",
+            "name": "Google: Gemini Pro Latest",
             "id": "~google/gemini-pro-latest",
             "context_length": 1048576,
             "input_modalities": [
@@ -9788,7 +10390,7 @@
             }
         },
         {
-            "name": "Google Gemini Flash Latest",
+            "name": "Google: Gemini Flash Latest",
             "id": "~google/gemini-flash-latest",
             "context_length": 1048576,
             "input_modalities": [
@@ -9826,7 +10428,7 @@
     ],
     "~moonshotai": [
         {
-            "name": "MoonshotAI Kimi Latest",
+            "name": "MoonshotAI: Kimi Latest",
             "id": "~moonshotai/kimi-latest",
             "context_length": 1048576,
             "input_modalities": [
@@ -9848,9 +10450,9 @@
                 "default_effort": "max"
             },
             "pricing": {
-                "prompt": "0.0000024",
-                "completion": "0.000012",
-                "input_cache_read": "0.00000024"
+                "prompt": "0.0000021",
+                "completion": "0.00001095",
+                "input_cache_read": "0.00000023"
             }
         }
     ],
@@ -10427,8 +11029,8 @@
             ],
             "reasoning": null,
             "pricing": {
-                "prompt": "0.0000002",
-                "completion": "0.000000696"
+                "prompt": "0.0000001875",
+                "completion": "0.0000006525"
             }
         },
         {
@@ -10681,8 +11283,8 @@
             ],
             "reasoning": null,
             "pricing": {
-                "prompt": "0.00000006",
-                "completion": "0.00000006"
+                "prompt": "0.00000008",
+                "completion": "0.00000011"
             }
         }
     ]

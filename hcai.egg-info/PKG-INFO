@@ -1,3 +1,15 @@
+Metadata-Version: 2.4
+Name: hcai
+Version: 1.0.2
+Summary: A lightweight AI CLI powered by Hack Club AI.
+Author: Aaryan Jadav
+License: MIT
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: requests
+Dynamic: license-file
+
 # HCAI
 - A lightweight AI command-line interface powered by Hack Club AI.
 

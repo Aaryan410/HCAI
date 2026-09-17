@@ -1,5 +1,6 @@
 import requests
 import json
+import time
 from hcai.config import load_config, validate_config
 
 
@@ -24,6 +25,7 @@ def create_payload(model: str, messages: list[dict], stream: bool = True) -> dic
 
     if stream:
         payload["stream"] = True
+        payload["stream_options"] = {"include_usage": True}
 
     return payload
 
@@ -68,6 +70,10 @@ def send_message(messages: list[dict[str, str]]) -> requests.Response | None:
         elif status == 403:
             print("\n❌ Access denied.")
             print("Your API key doesn't have permission to access this resource.\n")
+
+        elif status == 402:
+            print("\n❌ Insufficient API credits.")
+            print("The selected provider/account does not have enough credits for this request.\n")
 
         elif status == 404:
             print("\n❌ Model or endpoint not found.\n")
@@ -119,7 +125,7 @@ def send_message(messages: list[dict[str, str]]) -> requests.Response | None:
     return None
 
 
-def stream_response(response: requests.Response):
+def stream_response(response: requests.Response, usage_out: dict | None = None):
 
     try:
         for line in response.iter_lines(chunk_size=1):
@@ -138,8 +144,16 @@ def stream_response(response: requests.Response):
             try:
                 data = json.loads(line[6:])
 
-                choice = data["choices"][0]
-                delta = choice.get("delta") or {}
+                usage = data.get("usage")
+                if usage and usage_out is not None:
+                    usage_out.update(usage)
+
+                choices = data.get("choices") or []
+
+                if not choices:
+                    continue
+
+                delta = choices[0].get("delta") or {}
                 content = delta.get("content", "")
 
                 if content:
@@ -154,7 +168,7 @@ def stream_response(response: requests.Response):
     print()
 
 
-def chat(prompt: str, messages: list[dict]):
+def chat(prompt: str, messages: list[dict], meta: dict | None = None):
 
     messages.append(
         {
@@ -163,16 +177,25 @@ def chat(prompt: str, messages: list[dict]):
         }
     )
 
+    start_time = time.monotonic()
+
     response = send_message(messages)
 
     if response is None: 
         return None
 
     answer = ""
+    usage: dict = {}
 
     for chunk in stream_response(response):
         answer += chunk
         yield chunk
+
+    elapsed = time.monotonic() - start_time
+
+    if meta is not None:
+        meta["elapsed"] = elapsed
+        meta["total_tokens"] = usage.get("total_tokens")
 
     if answer:
         messages.append(
@@ -186,14 +209,3 @@ def chat(prompt: str, messages: list[dict]):
         return None
 
     return answer
-
-def render_stream(chunks):
-    full_response = ""
-
-    for chunk in chunks:
-        full_response += chunk
-        print(chunk, end="", flush=True)
-
-    print()
-
-    return full_response
