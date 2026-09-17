@@ -35,6 +35,7 @@
 
 ## Installation 
 - Basically just use "pip install hcai" on your terminal since I published this on PyPi org.
+- Then just run "hcai" on your terminal.
 - You will get to setup it by just pasting you Hack Club's AI API key.
 
 ## Run it locally?
