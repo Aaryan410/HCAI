@@ -20,6 +20,18 @@
 - Well setup is also super simple, just past your Hack Club's AI API keys to it.
 - No hassle with configuration or any other stuff, just directly it starts and by simple commands you can switch between models.
 
+## UI/UX
+- Here have a look when you want to prompt the AI.
+![alt text](image.png)
+- And on the extreme right the name of the model.
+![alt text](image-1.png)
+- Your prompt is then enclosed in a curved rectangle (since i wanted it to be similar to an actual chatbot).
+![alt text](image-2.png)
+- Look at the output, it highlights the code and also shows the code in different colors like we see on text editor like VSCode. Basically code changes the raw markdown into more interactive and more readable output.
+![alt text](image-3.png)
+- As you can also see in the above image that it also displays time taken to response.
+![alt text](image-4.png)
+
 ## Commands
 - This are commands:
 
