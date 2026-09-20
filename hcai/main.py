@@ -53,6 +53,8 @@ def main():
                 if handled:
                     continue
 
+            model_name = get_model_name(config["model"]) or config["model"]
+
             print_user_message(prompt)
 
             meta = {}

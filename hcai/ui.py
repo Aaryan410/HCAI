@@ -25,7 +25,7 @@ console = Console(theme=mono_theme)
 def print_banner(config, model_name: str) -> None:
     header = Text()
     header.append("HCAI", style = "hcai.header")
-    header.append(" v1.0.2", style = "hcai.subtle")
+    header.append(" v1.0.3", style = "hcai.subtle")
 
     right = Text(f"{model_name} . {config['provider']}", style = "hcai.subtle")
 

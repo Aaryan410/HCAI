@@ -1,8 +1,466 @@
 {
-    "stealth": [
+    "prism-ml": [
         {
-            "name": "Union Alpha",
-            "id": "stealth/union-alpha",
+            "name": "PrismML: Ternary Bonsai 2 27B",
+            "id": "prism-ml/ternary-bonsai-2-27b",
+            "context_length": 262144,
+            "input_modalities": [
+                "text",
+                "image"
+            ],
+            "output_modalities": [
+                "text"
+            ],
+            "reasoning": {
+                "mandatory": false,
+                "default_enabled": true,
+                "supported_efforts": [
+                    "xhigh",
+                    "medium"
+                ],
+                "default_effort": "xhigh"
+            },
+            "pricing": {
+                "prompt": "0.000000075",
+                "completion": "0.0000005"
+            }
+        }
+    ],
+    "z-ai": [
+        {
+            "name": "Z.ai: GLM 5.3 FlashX",
+            "id": "z-ai/glm-5.3-flashx",
+            "context_length": 1048576,
+            "input_modalities": [
+                "text",
+                "image",
+                "video"
+            ],
+            "output_modalities": [
+                "text"
+            ],
+            "reasoning": {
+                "mandatory": true,
+                "default_enabled": true,
+                "supported_efforts": [
+                    "max",
+                    "high",
+                    "low"
+                ],
+                "default_effort": "max"
+            },
+            "pricing": {
+                "prompt": "0.00000037",
+                "completion": "0.00000125",
+                "input_cache_read": "0.000000075"
+            }
+        },
+        {
+            "name": "Z.ai: GLM 5.3 Flash",
+            "id": "z-ai/glm-5.3-flash",
+            "context_length": 1310720,
+            "input_modalities": [
+                "text",
+                "image",
+                "video"
+            ],
+            "output_modalities": [
+                "text"
+            ],
+            "reasoning": {
+                "mandatory": true,
+                "default_enabled": true,
+                "supported_efforts": [
+                    "max",
+                    "high",
+                    "low"
+                ],
+                "default_effort": "max"
+            },
+            "pricing": {
+                "prompt": "0.00000009",
+                "completion": "0.0000003",
+                "input_cache_read": "0.000000018"
+            }
+        },
+        {
+            "name": "Z.ai: GLM 5.3 Flash (batch)",
+            "id": "z-ai/glm-5.3-flash:batch",
+            "context_length": 1048576,
+            "input_modalities": [
+                "text",
+                "image",
+                "video"
+            ],
+            "output_modalities": [
+                "text"
+            ],
+            "reasoning": {
+                "mandatory": true,
+                "default_enabled": true,
+                "supported_efforts": [
+                    "max",
+                    "high",
+                    "low"
+                ],
+                "default_effort": "max"
+            },
+            "pricing": {
+                "prompt": "0.000000075",
+                "completion": "0.00000025",
+                "input_cache_read": "0.000000015"
+            }
+        },
+        {
+            "name": "Z.ai: GLM 5.3",
+            "id": "z-ai/glm-5.3",
+            "context_length": 1310720,
+            "input_modalities": [
+                "text"
+            ],
+            "output_modalities": [
+                "text"
+            ],
+            "reasoning": {
+                "mandatory": true,
+                "default_enabled": true,
+                "supported_efforts": [
+                    "max",
+                    "high",
+                    "low"
+                ],
+                "default_effort": "max"
+            },
+            "pricing": {
+                "prompt": "0.000000896",
+                "completion": "0.000002816",
+                "input_cache_read": "0.0000001664"
+            }
+        },
+        {
+            "name": "Z.ai: GLM 5.3 (batch)",
+            "id": "z-ai/glm-5.3:batch",
+            "context_length": 1048576,
+            "input_modalities": [
+                "text"
+            ],
+            "output_modalities": [
+                "text"
+            ],
+            "reasoning": {
+                "mandatory": true,
+                "default_enabled": true,
+                "supported_efforts": [
+                    "max",
+                    "high",
+                    "low"
+                ],
+                "default_effort": "max"
+            },
+            "pricing": {
+                "prompt": "0.0000007",
+                "completion": "0.0000022",
+                "input_cache_read": "0.00000013"
+            }
+        },
+        {
+            "name": "Z.ai: GLM 5.2",
+            "id": "z-ai/glm-5.2",
+            "context_length": 1048576,
+            "input_modalities": [
+                "text"
+            ],
+            "output_modalities": [
+                "text"
+            ],
+            "reasoning": {
+                "mandatory": false,
+                "default_enabled": true,
+                "supported_efforts": [
+                    "xhigh",
+                    "high"
+                ],
+                "default_effort": "high"
+            },
+            "pricing": {
+                "prompt": "0.0000006496",
+                "completion": "0.0000020416",
+                "input_cache_read": "0.00000012064"
+            }
+        },
+        {
+            "name": "Z.ai: GLM 5.2 (batch)",
+            "id": "z-ai/glm-5.2:batch",
+            "context_length": 1048576,
+            "input_modalities": [
+                "text"
+            ],
+            "output_modalities": [
+                "text"
+            ],
+            "reasoning": {
+                "mandatory": false,
+                "default_enabled": true,
+                "supported_efforts": [
+                    "xhigh",
+                    "high"
+                ],
+                "default_effort": "high"
+            },
+            "pricing": {
+                "prompt": "0.0000007",
+                "completion": "0.0000022",
+                "input_cache_read": "0.00000007"
+            }
+        },
+        {
+            "name": "Z.ai: GLM 5.2 (free)",
+            "id": "z-ai/glm-5.2:free",
+            "context_length": 32768,
+            "input_modalities": [
+                "text"
+            ],
+            "output_modalities": [
+                "text"
+            ],
+            "reasoning": {
+                "mandatory": false,
+                "default_enabled": true,
+                "supported_efforts": [
+                    "xhigh",
+                    "high"
+                ],
+                "default_effort": "high"
+            },
+            "pricing": {
+                "prompt": "0",
+                "completion": "0"
+            }
+        },
+        {
+            "name": "Z.ai: GLM 5.1",
+            "id": "z-ai/glm-5.1",
+            "context_length": 204800,
+            "input_modalities": [
+                "text"
+            ],
+            "output_modalities": [
+                "text"
+            ],
+            "reasoning": {
+                "mandatory": false,
+                "default_enabled": true
+            },
+            "pricing": {
+                "prompt": "0.000000966",
+                "completion": "0.000003036",
+                "input_cache_read": "0.0000001794"
+            }
+        },
+        {
+            "name": "Z.ai: GLM 5V Turbo",
+            "id": "z-ai/glm-5v-turbo",
+            "context_length": 202752,
+            "input_modalities": [
+                "image",
+                "text",
+                "video"
+            ],
+            "output_modalities": [
+                "text"
+            ],
+            "reasoning": {
+                "mandatory": false,
+                "default_enabled": true
+            },
+            "pricing": {
+                "prompt": "0.0000012",
+                "completion": "0.000004",
+                "input_cache_read": "0.00000024"
+            }
+        },
+        {
+            "name": "Z.ai: GLM 5 Turbo",
+            "id": "z-ai/glm-5-turbo",
+            "context_length": 202752,
+            "input_modalities": [
+                "text"
+            ],
+            "output_modalities": [
+                "text"
+            ],
+            "reasoning": {
+                "mandatory": false,
+                "default_enabled": true
+            },
+            "pricing": {
+                "prompt": "0.0000012",
+                "completion": "0.000004",
+                "input_cache_read": "0.00000024"
+            }
+        },
+        {
+            "name": "Z.ai: GLM 5",
+            "id": "z-ai/glm-5",
+            "context_length": 204800,
+            "input_modalities": [
+                "text"
+            ],
+            "output_modalities": [
+                "text"
+            ],
+            "reasoning": {
+                "mandatory": false,
+                "default_enabled": true
+            },
+            "pricing": {
+                "prompt": "0.0000006",
+                "completion": "0.00000192",
+                "input_cache_read": "0.00000012"
+            }
+        },
+        {
+            "name": "Z.ai: GLM 4.7 Flash",
+            "id": "z-ai/glm-4.7-flash",
+            "context_length": 200000,
+            "input_modalities": [
+                "text"
+            ],
+            "output_modalities": [
+                "text"
+            ],
+            "reasoning": {
+                "mandatory": false,
+                "default_enabled": true
+            },
+            "pricing": {
+                "prompt": "0.0000000605",
+                "completion": "0.0000004"
+            }
+        },
+        {
+            "name": "Z.ai: GLM 4.7",
+            "id": "z-ai/glm-4.7",
+            "context_length": 204800,
+            "input_modalities": [
+                "text"
+            ],
+            "output_modalities": [
+                "text"
+            ],
+            "reasoning": {
+                "mandatory": false,
+                "default_enabled": true
+            },
+            "pricing": {
+                "prompt": "0.0000004",
+                "completion": "0.00000175",
+                "input_cache_read": "0.00000008"
+            }
+        },
+        {
+            "name": "Z.ai: GLM 4.6V",
+            "id": "z-ai/glm-4.6v",
+            "context_length": 131072,
+            "input_modalities": [
+                "image",
+                "text",
+                "video"
+            ],
+            "output_modalities": [
+                "text"
+            ],
+            "reasoning": {
+                "mandatory": false
+            },
+            "pricing": {
+                "prompt": "0.0000003",
+                "completion": "0.0000009",
+                "input_cache_read": "0.000000055"
+            }
+        },
+        {
+            "name": "Z.ai: GLM 4.6",
+            "id": "z-ai/glm-4.6",
+            "context_length": 204800,
+            "input_modalities": [
+                "text"
+            ],
+            "output_modalities": [
+                "text"
+            ],
+            "reasoning": {
+                "mandatory": false
+            },
+            "pricing": {
+                "prompt": "0.00000043",
+                "completion": "0.00000175",
+                "input_cache_read": "0.00000008"
+            }
+        },
+        {
+            "name": "Z.ai: GLM 4.5V",
+            "id": "z-ai/glm-4.5v",
+            "context_length": 65536,
+            "input_modalities": [
+                "text",
+                "image"
+            ],
+            "output_modalities": [
+                "text"
+            ],
+            "reasoning": {
+                "mandatory": false
+            },
+            "pricing": {
+                "prompt": "0.0000006",
+                "completion": "0.0000018",
+                "input_cache_read": "0.00000011"
+            }
+        },
+        {
+            "name": "Z.ai: GLM 4.5",
+            "id": "z-ai/glm-4.5",
+            "context_length": 131072,
+            "input_modalities": [
+                "text"
+            ],
+            "output_modalities": [
+                "text"
+            ],
+            "reasoning": {
+                "mandatory": false
+            },
+            "pricing": {
+                "prompt": "0.0000006",
+                "completion": "0.0000022",
+                "input_cache_read": "0.00000011"
+            }
+        },
+        {
+            "name": "Z.ai: GLM 4.5 Air",
+            "id": "z-ai/glm-4.5-air",
+            "context_length": 131072,
+            "input_modalities": [
+                "text"
+            ],
+            "output_modalities": [
+                "text"
+            ],
+            "reasoning": {
+                "mandatory": false
+            },
+            "pricing": {
+                "prompt": "0.00000013",
+                "completion": "0.00000085",
+                "input_cache_read": "0.000000025"
+            }
+        }
+    ],
+    "unbiased": [
+        {
+            "name": "Pareto",
+            "id": "unbiased/pareto",
             "context_length": 262144,
             "input_modalities": [
                 "text",
@@ -13,8 +471,9 @@
             ],
             "reasoning": null,
             "pricing": {
-                "prompt": "0",
-                "completion": "0"
+                "prompt": "0.0000025",
+                "completion": "0.0000075",
+                "input_cache_read": "0.00000025"
             }
         }
     ],
@@ -39,90 +498,9 @@
                 "default_effort": "high"
             },
             "pricing": {
-                "prompt": "0.00000066",
-                "completion": "0.00000198",
-                "input_cache_read": "0.000000022",
-                "overrides": [
-                    {
-                        "utc_days": [
-                            "saturday",
-                            "sunday"
-                        ],
-                        "prompt": "0.00000066",
-                        "completion": "0.00000198",
-                        "input_cache_read": "0.000000022"
-                    },
-                    {
-                        "utc_days": [
-                            "monday",
-                            "tuesday",
-                            "wednesday",
-                            "thursday",
-                            "friday"
-                        ],
-                        "utc_start": 0,
-                        "utc_end": 100,
-                        "prompt": "0.00000066",
-                        "completion": "0.00000198",
-                        "input_cache_read": "0.000000022"
-                    },
-                    {
-                        "utc_days": [
-                            "monday",
-                            "tuesday",
-                            "wednesday",
-                            "thursday",
-                            "friday"
-                        ],
-                        "utc_start": 100,
-                        "utc_end": 400,
-                        "prompt": "0.00000132",
-                        "completion": "0.00000396",
-                        "input_cache_read": "0.000000044"
-                    },
-                    {
-                        "utc_days": [
-                            "monday",
-                            "tuesday",
-                            "wednesday",
-                            "thursday",
-                            "friday"
-                        ],
-                        "utc_start": 400,
-                        "utc_end": 600,
-                        "prompt": "0.00000066",
-                        "completion": "0.00000198",
-                        "input_cache_read": "0.000000022"
-                    },
-                    {
-                        "utc_days": [
-                            "monday",
-                            "tuesday",
-                            "wednesday",
-                            "thursday",
-                            "friday"
-                        ],
-                        "utc_start": 600,
-                        "utc_end": 1000,
-                        "prompt": "0.00000132",
-                        "completion": "0.00000396",
-                        "input_cache_read": "0.000000044"
-                    },
-                    {
-                        "utc_days": [
-                            "monday",
-                            "tuesday",
-                            "wednesday",
-                            "thursday",
-                            "friday"
-                        ],
-                        "utc_start": 1000,
-                        "utc_end": 0,
-                        "prompt": "0.00000066",
-                        "completion": "0.00000198",
-                        "input_cache_read": "0.000000022"
-                    }
-                ]
+                "prompt": "0.00000057684",
+                "completion": "0.00000173052",
+                "input_cache_read": "0.000000019228"
             }
         },
         {
@@ -147,9 +525,9 @@
                 "default_effort": "high"
             },
             "pricing": {
-                "prompt": "0.00000015",
-                "completion": "0.0000006",
-                "input_cache_read": "0.000000015"
+                "prompt": "0.00000013",
+                "completion": "0.00000052",
+                "input_cache_read": "0.0000000026"
             }
         },
         {
@@ -173,9 +551,9 @@
                 "default_effort": "high"
             },
             "pricing": {
-                "prompt": "0.00000003",
-                "completion": "0.00000013",
-                "input_cache_read": "0.00000001"
+                "prompt": "0.00000004",
+                "completion": "0.00000008",
+                "input_cache_read": "0.000000016"
             }
         }
     ],
@@ -801,9 +1179,9 @@
                 "default_effort": "high"
             },
             "pricing": {
-                "prompt": "0.00000022",
-                "completion": "0.00000066",
-                "input_cache_read": "0.000000007"
+                "prompt": "0.0000002156",
+                "completion": "0.0000006468",
+                "input_cache_read": "0.00000000686"
             }
         },
         {
@@ -985,9 +1363,9 @@
                 "default_effort": "high"
             },
             "pricing": {
-                "prompt": "0.00000006",
-                "completion": "0.00000012",
-                "input_cache_read": "0.000000012"
+                "prompt": "0.00000004",
+                "completion": "0.00000008",
+                "input_cache_read": "0.000000016"
             }
         },
         {
@@ -1035,9 +1413,9 @@
                 "default_effort": "high"
             },
             "pricing": {
-                "prompt": "0.0000016",
-                "completion": "0.0000032",
-                "input_cache_read": "0.000000135"
+                "prompt": "0.000000422298",
+                "completion": "0.000000844596",
+                "input_cache_read": "0.0000000351915"
             }
         },
         {
@@ -1059,9 +1437,9 @@
                 "default_effort": "high"
             },
             "pricing": {
-                "prompt": "0.000000088606",
-                "completion": "0.000000177212",
-                "input_cache_read": "0.0000000177212"
+                "prompt": "0.00000003668",
+                "completion": "0.00000007336",
+                "input_cache_read": "0.000000007336"
             }
         },
         {
@@ -1223,8 +1601,8 @@
             ],
             "reasoning": null,
             "pricing": {
-                "prompt": "0.0000002574",
-                "completion": "0.0000010287"
+                "prompt": "0.00000032",
+                "completion": "0.00000089"
             }
         }
     ],
@@ -3151,8 +3529,9 @@
                 "default_effort": "medium"
             },
             "pricing": {
-                "prompt": "0.000000037",
-                "completion": "0.00000017"
+                "prompt": "0.00000015",
+                "completion": "0.0000006",
+                "input_cache_read": "0.000000075"
             }
         },
         {
@@ -3934,9 +4313,36 @@
                 "default_effort": "xhigh"
             },
             "pricing": {
-                "prompt": "0.000000214",
-                "completion": "0.00000255",
-                "input_cache_read": "0.00000015"
+                "prompt": "0.00000042",
+                "completion": "0.000003",
+                "input_cache_read": "0.000000085"
+            }
+        },
+        {
+            "name": "Qwen: Qwen3.8 27B (free)",
+            "id": "qwen/qwen3.8-27b:free",
+            "context_length": 262144,
+            "input_modalities": [
+                "text",
+                "image",
+                "video"
+            ],
+            "output_modalities": [
+                "text"
+            ],
+            "reasoning": {
+                "mandatory": false,
+                "default_enabled": true,
+                "supported_efforts": [
+                    "xhigh",
+                    "medium",
+                    "low"
+                ],
+                "default_effort": "xhigh"
+            },
+            "pricing": {
+                "prompt": "0",
+                "completion": "0"
             }
         },
         {
@@ -4298,8 +4704,9 @@
                 "mandatory": false
             },
             "pricing": {
-                "prompt": "0.0000001625",
-                "completion": "0.0000013"
+                "prompt": "0.0000003125",
+                "completion": "0.00000125",
+                "input_cache_read": "0.00000015625"
             }
         },
         {
@@ -5155,8 +5562,8 @@
                 "default_effort": "medium"
             },
             "pricing": {
-                "prompt": "0.0000003",
-                "completion": "0.0000011",
+                "prompt": "0.00000035",
+                "completion": "0.0000015",
                 "input_cache_read": "0.00000004"
             }
         },
@@ -7581,412 +7988,9 @@
                 "default_effort": "max"
             },
             "pricing": {
-                "prompt": "0.0000008775",
-                "completion": "0.00000297",
-                "input_cache_read": "0.0000001755"
-            }
-        }
-    ],
-    "z-ai": [
-        {
-            "name": "Z.ai: GLM 5.3 Flash",
-            "id": "z-ai/glm-5.3-flash",
-            "context_length": 1310720,
-            "input_modalities": [
-                "text",
-                "image",
-                "video"
-            ],
-            "output_modalities": [
-                "text"
-            ],
-            "reasoning": {
-                "mandatory": true,
-                "default_enabled": true,
-                "supported_efforts": [
-                    "max",
-                    "high",
-                    "low"
-                ],
-                "default_effort": "max"
-            },
-            "pricing": {
-                "prompt": "0.00000009",
-                "completion": "0.0000003",
-                "input_cache_read": "0.000000018"
-            }
-        },
-        {
-            "name": "Z.ai: GLM 5.3 Flash (batch)",
-            "id": "z-ai/glm-5.3-flash:batch",
-            "context_length": 1048576,
-            "input_modalities": [
-                "text",
-                "image",
-                "video"
-            ],
-            "output_modalities": [
-                "text"
-            ],
-            "reasoning": {
-                "mandatory": true,
-                "default_enabled": true,
-                "supported_efforts": [
-                    "max",
-                    "high",
-                    "low"
-                ],
-                "default_effort": "max"
-            },
-            "pricing": {
-                "prompt": "0.000000075",
-                "completion": "0.00000025",
-                "input_cache_read": "0.000000015"
-            }
-        },
-        {
-            "name": "Z.ai: GLM 5.3",
-            "id": "z-ai/glm-5.3",
-            "context_length": 1310720,
-            "input_modalities": [
-                "text"
-            ],
-            "output_modalities": [
-                "text"
-            ],
-            "reasoning": {
-                "mandatory": true,
-                "default_enabled": true,
-                "supported_efforts": [
-                    "max",
-                    "high",
-                    "low"
-                ],
-                "default_effort": "max"
-            },
-            "pricing": {
-                "prompt": "0.0000014",
-                "completion": "0.0000044",
-                "input_cache_read": "0.00000026"
-            }
-        },
-        {
-            "name": "Z.ai: GLM 5.3 (batch)",
-            "id": "z-ai/glm-5.3:batch",
-            "context_length": 1048576,
-            "input_modalities": [
-                "text"
-            ],
-            "output_modalities": [
-                "text"
-            ],
-            "reasoning": {
-                "mandatory": true,
-                "default_enabled": true,
-                "supported_efforts": [
-                    "max",
-                    "high",
-                    "low"
-                ],
-                "default_effort": "max"
-            },
-            "pricing": {
-                "prompt": "0.0000007",
-                "completion": "0.0000022",
-                "input_cache_read": "0.00000013"
-            }
-        },
-        {
-            "name": "Z.ai: GLM 5.2",
-            "id": "z-ai/glm-5.2",
-            "context_length": 1048576,
-            "input_modalities": [
-                "text"
-            ],
-            "output_modalities": [
-                "text"
-            ],
-            "reasoning": {
-                "mandatory": false,
-                "default_enabled": true,
-                "supported_efforts": [
-                    "xhigh",
-                    "high"
-                ],
-                "default_effort": "high"
-            },
-            "pricing": {
-                "prompt": "0.0000014",
-                "completion": "0.0000044",
-                "input_cache_read": "0.00000014"
-            }
-        },
-        {
-            "name": "Z.ai: GLM 5.2 (batch)",
-            "id": "z-ai/glm-5.2:batch",
-            "context_length": 1048576,
-            "input_modalities": [
-                "text"
-            ],
-            "output_modalities": [
-                "text"
-            ],
-            "reasoning": {
-                "mandatory": false,
-                "default_enabled": true,
-                "supported_efforts": [
-                    "xhigh",
-                    "high"
-                ],
-                "default_effort": "high"
-            },
-            "pricing": {
-                "prompt": "0.0000007",
-                "completion": "0.0000022",
-                "input_cache_read": "0.00000007"
-            }
-        },
-        {
-            "name": "Z.ai: GLM 5.2 (free)",
-            "id": "z-ai/glm-5.2:free",
-            "context_length": 32768,
-            "input_modalities": [
-                "text"
-            ],
-            "output_modalities": [
-                "text"
-            ],
-            "reasoning": {
-                "mandatory": false,
-                "default_enabled": true,
-                "supported_efforts": [
-                    "xhigh",
-                    "high"
-                ],
-                "default_effort": "high"
-            },
-            "pricing": {
-                "prompt": "0",
-                "completion": "0"
-            }
-        },
-        {
-            "name": "Z.ai: GLM 5.1",
-            "id": "z-ai/glm-5.1",
-            "context_length": 204800,
-            "input_modalities": [
-                "text"
-            ],
-            "output_modalities": [
-                "text"
-            ],
-            "reasoning": {
-                "mandatory": false,
-                "default_enabled": true
-            },
-            "pricing": {
-                "prompt": "0.000000966",
-                "completion": "0.000003036",
-                "input_cache_read": "0.0000001794"
-            }
-        },
-        {
-            "name": "Z.ai: GLM 5V Turbo",
-            "id": "z-ai/glm-5v-turbo",
-            "context_length": 202752,
-            "input_modalities": [
-                "image",
-                "text",
-                "video"
-            ],
-            "output_modalities": [
-                "text"
-            ],
-            "reasoning": {
-                "mandatory": false,
-                "default_enabled": true
-            },
-            "pricing": {
-                "prompt": "0.0000012",
-                "completion": "0.000004",
-                "input_cache_read": "0.00000024"
-            }
-        },
-        {
-            "name": "Z.ai: GLM 5 Turbo",
-            "id": "z-ai/glm-5-turbo",
-            "context_length": 202752,
-            "input_modalities": [
-                "text"
-            ],
-            "output_modalities": [
-                "text"
-            ],
-            "reasoning": {
-                "mandatory": false,
-                "default_enabled": true
-            },
-            "pricing": {
-                "prompt": "0.0000012",
-                "completion": "0.000004",
-                "input_cache_read": "0.00000024"
-            }
-        },
-        {
-            "name": "Z.ai: GLM 5",
-            "id": "z-ai/glm-5",
-            "context_length": 204800,
-            "input_modalities": [
-                "text"
-            ],
-            "output_modalities": [
-                "text"
-            ],
-            "reasoning": {
-                "mandatory": false,
-                "default_enabled": true
-            },
-            "pricing": {
-                "prompt": "0.0000006",
-                "completion": "0.00000192",
-                "input_cache_read": "0.00000012"
-            }
-        },
-        {
-            "name": "Z.ai: GLM 4.7 Flash",
-            "id": "z-ai/glm-4.7-flash",
-            "context_length": 200000,
-            "input_modalities": [
-                "text"
-            ],
-            "output_modalities": [
-                "text"
-            ],
-            "reasoning": {
-                "mandatory": false,
-                "default_enabled": true
-            },
-            "pricing": {
-                "prompt": "0.0000000605",
-                "completion": "0.0000004"
-            }
-        },
-        {
-            "name": "Z.ai: GLM 4.7",
-            "id": "z-ai/glm-4.7",
-            "context_length": 204800,
-            "input_modalities": [
-                "text"
-            ],
-            "output_modalities": [
-                "text"
-            ],
-            "reasoning": {
-                "mandatory": false,
-                "default_enabled": true
-            },
-            "pricing": {
-                "prompt": "0.0000004",
-                "completion": "0.00000175",
-                "input_cache_read": "0.00000008"
-            }
-        },
-        {
-            "name": "Z.ai: GLM 4.6V",
-            "id": "z-ai/glm-4.6v",
-            "context_length": 131072,
-            "input_modalities": [
-                "image",
-                "text",
-                "video"
-            ],
-            "output_modalities": [
-                "text"
-            ],
-            "reasoning": {
-                "mandatory": false
-            },
-            "pricing": {
-                "prompt": "0.0000003",
-                "completion": "0.0000009",
-                "input_cache_read": "0.000000055"
-            }
-        },
-        {
-            "name": "Z.ai: GLM 4.6",
-            "id": "z-ai/glm-4.6",
-            "context_length": 204800,
-            "input_modalities": [
-                "text"
-            ],
-            "output_modalities": [
-                "text"
-            ],
-            "reasoning": {
-                "mandatory": false
-            },
-            "pricing": {
-                "prompt": "0.0000005",
-                "completion": "0.000002",
-                "input_cache_read": "0.0000001"
-            }
-        },
-        {
-            "name": "Z.ai: GLM 4.5V",
-            "id": "z-ai/glm-4.5v",
-            "context_length": 65536,
-            "input_modalities": [
-                "text",
-                "image"
-            ],
-            "output_modalities": [
-                "text"
-            ],
-            "reasoning": {
-                "mandatory": false
-            },
-            "pricing": {
-                "prompt": "0.0000006",
-                "completion": "0.0000018",
-                "input_cache_read": "0.00000011"
-            }
-        },
-        {
-            "name": "Z.ai: GLM 4.5",
-            "id": "z-ai/glm-4.5",
-            "context_length": 131072,
-            "input_modalities": [
-                "text"
-            ],
-            "output_modalities": [
-                "text"
-            ],
-            "reasoning": {
-                "mandatory": false
-            },
-            "pricing": {
-                "prompt": "0.0000006",
-                "completion": "0.0000022",
-                "input_cache_read": "0.00000011"
-            }
-        },
-        {
-            "name": "Z.ai: GLM 4.5 Air",
-            "id": "z-ai/glm-4.5-air",
-            "context_length": 131072,
-            "input_modalities": [
-                "text"
-            ],
-            "output_modalities": [
-                "text"
-            ],
-            "reasoning": {
-                "mandatory": false
-            },
-            "pricing": {
-                "prompt": "0.00000013",
-                "completion": "0.00000085",
-                "input_cache_read": "0.000000025"
+                "prompt": "0.0000008442",
+                "completion": "0.0000026532",
+                "input_cache_read": "0.00000015678"
             }
         }
     ],
@@ -8475,7 +8479,7 @@
                 "mandatory": false
             },
             "pricing": {
-                "prompt": "0.00000008",
+                "prompt": "0.00000007",
                 "completion": "0.0000002",
                 "input_cache_read": "0.00000004"
             }
@@ -8559,9 +8563,9 @@
                 "default_effort": "high"
             },
             "pricing": {
-                "prompt": "0.000000625",
-                "completion": "0.000003125",
-                "input_cache_read": "0.0000001875"
+                "prompt": "0.0000006",
+                "completion": "0.0000024",
+                "input_cache_read": "0.00000012"
             }
         },
         {
@@ -8693,7 +8697,18 @@
                 "text"
             ],
             "reasoning": {
-                "mandatory": false
+                "mandatory": false,
+                "default_enabled": false,
+                "supported_efforts": [
+                    "max",
+                    "xhigh",
+                    "high",
+                    "medium",
+                    "low",
+                    "minimal",
+                    "none"
+                ],
+                "default_effort": "medium"
             },
             "pricing": {
                 "prompt": "0.00000009",
@@ -8712,7 +8727,16 @@
                 "text"
             ],
             "reasoning": {
-                "mandatory": false
+                "mandatory": false,
+                "default_enabled": false,
+                "supported_efforts": [
+                    "high",
+                    "medium",
+                    "low",
+                    "minimal",
+                    "none"
+                ],
+                "default_effort": "medium"
             },
             "pricing": {
                 "prompt": "0.00000015",
@@ -9112,9 +9136,9 @@
                 "default_effort": "max"
             },
             "pricing": {
-                "prompt": "0.000003",
-                "completion": "0.000015",
-                "input_cache_read": "0.0000003"
+                "prompt": "0.0000017",
+                "completion": "0.0000085",
+                "input_cache_read": "0.00000017"
             }
         },
         {
@@ -10054,25 +10078,6 @@
             }
         },
         {
-            "name": "Mistral: Mistral Large 3 2512",
-            "id": "mistralai/mistral-large-2512",
-            "context_length": 262144,
-            "input_modalities": [
-                "text",
-                "image",
-                "file"
-            ],
-            "output_modalities": [
-                "text"
-            ],
-            "reasoning": null,
-            "pricing": {
-                "prompt": "0.0000005",
-                "completion": "0.0000015",
-                "input_cache_read": "0.00000005"
-            }
-        },
-        {
             "name": "Mistral: Mistral Large 3 2512 (batch)",
             "id": "mistralai/mistral-large-2512:batch",
             "context_length": 262144,
@@ -10450,9 +10455,9 @@
                 "default_effort": "max"
             },
             "pricing": {
-                "prompt": "0.0000021",
-                "completion": "0.00001095",
-                "input_cache_read": "0.00000023"
+                "prompt": "0.0000017",
+                "completion": "0.0000085",
+                "input_cache_read": "0.00000017"
             }
         }
     ],
