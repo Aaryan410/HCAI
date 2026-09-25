@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "hcai"
-version = "1.0.3"
+version = "1.0.4"
 description = "A lightweight AI CLI powered by Hack Club AI."
 readme = "README.md"
 requires-python = ">=3.10"
@@ -16,7 +16,8 @@ authors = [
 
 dependencies = [
     "requests",
-    "rich"
+    "rich",
+    "keyring"
 ]
 
 [project.scripts]
